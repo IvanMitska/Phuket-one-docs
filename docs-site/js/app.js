@@ -57,53 +57,61 @@ function initElements() {
     elements.navItems = document.querySelectorAll('.nav-item');
 }
 
-// Helper for adding both click and touch events
-function addTapListener(element, callback) {
-    if (!element) return;
+function initEventListeners() {
+    // Use event delegation for better mobile support
+    document.addEventListener('click', (e) => {
+        const target = e.target.closest('[data-page], [data-platform], [data-level], .mobile-menu-toggle, .mobile-overlay, .mobile-search-btn');
+        if (!target) return;
 
-    element.addEventListener('click', callback);
-
-    // Prevent double-firing on touch devices
-    let touchMoved = false;
-    element.addEventListener('touchstart', () => { touchMoved = false; }, { passive: true });
-    element.addEventListener('touchmove', () => { touchMoved = true; }, { passive: true });
-    element.addEventListener('touchend', (e) => {
-        if (!touchMoved) {
+        // Navigation items (sidebar and bottom nav)
+        if (target.dataset.page) {
             e.preventDefault();
-            callback(e);
+            navigateTo(target.dataset.page);
+            updateBottomNavActive(target.dataset.page);
+            closeMobileMenu();
+            return;
+        }
+
+        // Platform switcher
+        if (target.dataset.platform) {
+            e.preventDefault();
+            switchPlatform(target.dataset.platform);
+            return;
+        }
+
+        // Detail level switcher
+        if (target.dataset.level) {
+            e.preventDefault();
+            switchDetailLevel(target.dataset.level);
+            return;
+        }
+
+        // Mobile menu toggle
+        if (target.id === 'mobile-menu-toggle' || target.closest('#mobile-menu-toggle')) {
+            e.preventDefault();
+            toggleMobileMenu();
+            return;
+        }
+
+        // Mobile overlay
+        if (target.id === 'mobile-overlay') {
+            e.preventDefault();
+            closeMobileMenu();
+            return;
+        }
+
+        // Mobile search button
+        if (target.id === 'mobile-search-btn' || target.closest('#mobile-search-btn')) {
+            e.preventDefault();
+            openMobileMenu();
+            setTimeout(() => {
+                elements.searchInput?.focus();
+            }, 300);
+            return;
         }
     });
-}
 
-function initEventListeners() {
-    // Navigation items
-    elements.navItems.forEach(item => {
-        addTapListener(item, (e) => {
-            e.preventDefault();
-            const page = item.dataset.page;
-            if (page) {
-                navigateTo(page);
-            }
-        });
-    });
-
-    // Platform switcher
-    elements.platformButtons.forEach(btn => {
-        addTapListener(btn, () => {
-            const platform = btn.dataset.platform;
-            switchPlatform(platform);
-        });
-    });
-
-    // Detail level switcher
-    elements.detailButtons.forEach(btn => {
-        addTapListener(btn, () => {
-            const level = btn.dataset.level;
-            switchDetailLevel(level);
-        });
-    });
-
-    // Search
+    // Search input
     if (elements.searchInput) {
         elements.searchInput.addEventListener('input', debounce((e) => {
             state.searchQuery = e.target.value.toLowerCase();
@@ -116,37 +124,6 @@ function initEventListeners() {
             }
         });
     }
-
-    // Mobile menu toggle
-    if (elements.mobileMenuToggle) {
-        addTapListener(elements.mobileMenuToggle, toggleMobileMenu);
-    }
-
-    // Mobile overlay click
-    if (elements.mobileOverlay) {
-        addTapListener(elements.mobileOverlay, closeMobileMenu);
-    }
-
-    // Mobile search button
-    if (elements.mobileSearchBtn) {
-        addTapListener(elements.mobileSearchBtn, () => {
-            openMobileMenu();
-            setTimeout(() => {
-                elements.searchInput?.focus();
-            }, 300);
-        });
-    }
-
-    // Bottom navigation items
-    elements.bottomNavItems.forEach(item => {
-        addTapListener(item, () => {
-            const page = item.dataset.page;
-            if (page) {
-                navigateTo(page);
-                updateBottomNavActive(page);
-            }
-        });
-    });
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
