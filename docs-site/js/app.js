@@ -234,7 +234,10 @@ function loadPage(page) {
 
     elements.mainContent.innerHTML = html;
 
-    // Scroll to top
+    // Scroll to top - both window and content container
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     elements.mainContent.scrollTo(0, 0);
 
     // Re-initialize any interactive elements in the new content
