@@ -713,8 +713,20 @@ svg.platform-icon {
     background: none;
 }
 
+.card * {
+    pointer-events: none;
+}
+
 .card-icon {
     font-size: 40px;
+    margin-bottom: 16px;
+    display: block;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.card-icon-svg {
+    width: 40px;
+    height: 40px;
     margin-bottom: 16px;
     display: block;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
