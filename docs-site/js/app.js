@@ -57,62 +57,83 @@ function initElements() {
     elements.navItems = document.querySelectorAll('.nav-item');
 }
 
+// Bind click to element
+function bindClick(el, handler) {
+    if (!el) return;
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', handler, false);
+}
+
 function initEventListeners() {
-    // Single click handler with event delegation
-    document.body.addEventListener('click', function(e) {
-        // Find clickable element
-        const pageEl = e.target.closest('[data-page]');
-        const platformEl = e.target.closest('[data-platform]');
-        const levelEl = e.target.closest('[data-level]');
-        const menuToggle = e.target.closest('#mobile-menu-toggle');
-        const overlay = e.target.closest('#mobile-overlay');
-        const searchBtn = e.target.closest('#mobile-search-btn');
-
-        if (pageEl) {
+    // Bottom nav items - direct binding
+    document.querySelectorAll('.bottom-nav-item').forEach(item => {
+        bindClick(item, function(e) {
             e.preventDefault();
-            e.stopPropagation();
-            navigateTo(pageEl.dataset.page);
-            updateBottomNavActive(pageEl.dataset.page);
-            closeMobileMenu();
-            return;
-        }
+            const page = this.dataset.page;
+            if (page) {
+                navigateTo(page);
+                updateBottomNavActive(page);
+            }
+        });
+    });
 
-        if (platformEl) {
+    // Sidebar nav items
+    document.querySelectorAll('.nav-item').forEach(item => {
+        bindClick(item, function(e) {
             e.preventDefault();
-            e.stopPropagation();
-            switchPlatform(platformEl.dataset.platform);
-            return;
-        }
+            const page = this.dataset.page;
+            if (page) {
+                navigateTo(page);
+                closeMobileMenu();
+            }
+        });
+    });
 
-        if (levelEl) {
+    // Platform buttons
+    document.querySelectorAll('.platform-btn').forEach(btn => {
+        bindClick(btn, function(e) {
             e.preventDefault();
-            e.stopPropagation();
-            switchDetailLevel(levelEl.dataset.level);
-            return;
-        }
+            const platform = this.dataset.platform;
+            if (platform) switchPlatform(platform);
+        });
+    });
 
-        if (menuToggle) {
+    // Detail level buttons
+    document.querySelectorAll('.detail-btn').forEach(btn => {
+        bindClick(btn, function(e) {
             e.preventDefault();
-            e.stopPropagation();
+            const level = this.dataset.level;
+            if (level) switchDetailLevel(level);
+        });
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    if (menuToggle) {
+        bindClick(menuToggle, function(e) {
+            e.preventDefault();
             toggleMobileMenu();
-            return;
-        }
+        });
+    }
 
-        if (overlay) {
+    // Mobile overlay
+    const overlay = document.getElementById('mobile-overlay');
+    if (overlay) {
+        bindClick(overlay, function(e) {
             e.preventDefault();
-            e.stopPropagation();
             closeMobileMenu();
-            return;
-        }
+        });
+    }
 
-        if (searchBtn) {
+    // Mobile search button
+    const searchBtn = document.getElementById('mobile-search-btn');
+    if (searchBtn) {
+        bindClick(searchBtn, function(e) {
             e.preventDefault();
-            e.stopPropagation();
             openMobileMenu();
             setTimeout(() => elements.searchInput?.focus(), 300);
-            return;
-        }
-    });
+        });
+    }
 
     // Search input
     if (elements.searchInput) {
@@ -474,9 +495,27 @@ function copyCode(button) {
 }
 
 function initCards() {
-    const cards = document.querySelectorAll('.card[onclick]');
-    cards.forEach(card => {
+    // Bind clicks on cards with data-page
+    document.querySelectorAll('.card[data-page]').forEach(card => {
         card.style.cursor = 'pointer';
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            const page = this.dataset.page;
+            if (page) {
+                navigateTo(page);
+            }
+        });
+    });
+
+    // Bind clicks on links with data-page
+    document.querySelectorAll('a[data-page]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const page = this.dataset.page;
+            if (page) {
+                navigateTo(page);
+            }
+        });
     });
 }
 
