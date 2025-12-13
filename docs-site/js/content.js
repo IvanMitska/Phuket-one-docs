@@ -246,7 +246,7 @@ const CONTENT = {
                 </div>
 
                 <div class="roadmap-cta">
-                    <a href="#" onclick="navigateTo('roadmap'); return false;" class="link-arrow">Подробный план разработки →</a>
+                    <a href="#" data-page="roadmap" class="link-arrow">Подробный план разработки →</a>
                 </div>
             </div>
         `

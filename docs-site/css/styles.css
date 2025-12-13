@@ -82,6 +82,24 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   MOBILE TOUCH OPTIMIZATION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Enable fast clicks on all interactive elements */
+button,
+a,
+[data-page],
+[data-platform],
+[data-level],
+.card,
+.nav-item,
+.bottom-nav-item {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(99, 102, 241, 0.2);
+    cursor: pointer;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    RESET & BASE
    ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -711,10 +729,6 @@ svg.platform-icon {
 /* Disable gradient line for expandable cards - they use ::before for arrow */
 .card.card-expandable:hover::before {
     background: none;
-}
-
-.card * {
-    pointer-events: none;
 }
 
 .card-icon {

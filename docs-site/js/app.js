@@ -57,69 +57,60 @@ function initElements() {
     elements.navItems = document.querySelectorAll('.nav-item');
 }
 
-function handleInteraction(e) {
-    const target = e.target.closest('[data-page], [data-platform], [data-level], #mobile-menu-toggle, #mobile-overlay, #mobile-search-btn');
-    if (!target) return;
-
-    e.preventDefault();
-
-    // Navigation items (sidebar and bottom nav)
-    if (target.dataset.page) {
-        navigateTo(target.dataset.page);
-        updateBottomNavActive(target.dataset.page);
-        closeMobileMenu();
-        return;
-    }
-
-    // Platform switcher
-    if (target.dataset.platform) {
-        switchPlatform(target.dataset.platform);
-        return;
-    }
-
-    // Detail level switcher
-    if (target.dataset.level) {
-        switchDetailLevel(target.dataset.level);
-        return;
-    }
-
-    // Mobile menu toggle
-    if (target.id === 'mobile-menu-toggle') {
-        toggleMobileMenu();
-        return;
-    }
-
-    // Mobile overlay
-    if (target.id === 'mobile-overlay') {
-        closeMobileMenu();
-        return;
-    }
-
-    // Mobile search button
-    if (target.id === 'mobile-search-btn') {
-        openMobileMenu();
-        setTimeout(() => {
-            elements.searchInput?.focus();
-        }, 300);
-        return;
-    }
-}
-
 function initEventListeners() {
-    // Event delegation for click (desktop) and touchend (mobile)
-    document.addEventListener('click', handleInteraction);
+    // Single click handler with event delegation
+    document.body.addEventListener('click', function(e) {
+        // Find clickable element
+        const pageEl = e.target.closest('[data-page]');
+        const platformEl = e.target.closest('[data-platform]');
+        const levelEl = e.target.closest('[data-level]');
+        const menuToggle = e.target.closest('#mobile-menu-toggle');
+        const overlay = e.target.closest('#mobile-overlay');
+        const searchBtn = e.target.closest('#mobile-search-btn');
 
-    // Touch support for mobile
-    let touchStartY = 0;
-    document.addEventListener('touchstart', (e) => {
-        touchStartY = e.touches[0].clientY;
-    }, { passive: true });
+        if (pageEl) {
+            e.preventDefault();
+            e.stopPropagation();
+            navigateTo(pageEl.dataset.page);
+            updateBottomNavActive(pageEl.dataset.page);
+            closeMobileMenu();
+            return;
+        }
 
-    document.addEventListener('touchend', (e) => {
-        // Only handle tap, not scroll
-        const touchEndY = e.changedTouches[0].clientY;
-        if (Math.abs(touchEndY - touchStartY) < 10) {
-            handleInteraction(e);
+        if (platformEl) {
+            e.preventDefault();
+            e.stopPropagation();
+            switchPlatform(platformEl.dataset.platform);
+            return;
+        }
+
+        if (levelEl) {
+            e.preventDefault();
+            e.stopPropagation();
+            switchDetailLevel(levelEl.dataset.level);
+            return;
+        }
+
+        if (menuToggle) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMobileMenu();
+            return;
+        }
+
+        if (overlay) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeMobileMenu();
+            return;
+        }
+
+        if (searchBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+            openMobileMenu();
+            setTimeout(() => elements.searchInput?.focus(), 300);
+            return;
         }
     });
 
