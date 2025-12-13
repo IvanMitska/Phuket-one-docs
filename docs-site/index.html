@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Phuket-one - Документация</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-text">Phuket-one</span>
+            </div>
+            <span class="version-badge">v1.0</span>
+        </div>
+
+        <!-- Search -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Поиск..." class="search-input">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <!-- Detail Level Switcher -->
+        <div class="detail-switcher">
+            <div class="detail-label">Уровень детализации:</div>
+            <div class="detail-buttons">
+                <button class="detail-btn active" data-level="quick" title="Краткая выжимка">
+                    <span>⚡</span> Кратко
+                </button>
+                <button class="detail-btn" data-level="medium" title="Средний уровень">
+                    <span>📖</span> Средне
+                </button>
+                <button class="detail-btn" data-level="full" title="Полная информация">
+                    <span>📚</span> Полно
+                </button>
+            </div>
+        </div>
+
+        <!-- Platform Switcher -->
+        <div class="platform-switcher">
+            <button class="platform-btn active" data-platform="all">Все</button>
+            <button class="platform-btn" data-platform="ios">
+                <svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg> iOS
+            </button>
+            <button class="platform-btn" data-platform="android">
+                <svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-1.44-.59-3.03-.9-4.47-.9s-3.03.31-4.47.9L5.65 5.67c-.19-.29-.54-.38-.83-.22-.31.16-.42.54-.26.85L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg> Android
+            </button>
+            <button class="platform-btn" data-platform="web">
+                <span class="platform-icon">🌐</span> Web
+            </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-menu">
+            <div class="nav-section">
+                <div class="nav-section-title">Начало работы</div>
+                <a href="#" class="nav-item active" data-page="overview">
+                    <span class="nav-icon">📋</span>
+                    Обзор проекта
+                </a>
+                <a href="#" class="nav-item" data-page="prd">
+                    <span class="nav-icon">📄</span>
+                    Требования (PRD)
+                </a>
+                <a href="#" class="nav-item" data-page="discovery">
+                    <span class="nav-icon">🔬</span>
+                    Исследование рынка
+                </a>
+                <a href="#" class="nav-item" data-page="roadmap">
+                    <span class="nav-icon">🗓️</span>
+                    Roadmap (8 мес.)
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Архитектура</div>
+                <a href="#" class="nav-item" data-page="system-design">
+                    <span class="nav-icon">🏗️</span>
+                    Дизайн системы
+                </a>
+                <a href="#" class="nav-item" data-page="solution-arch">
+                    <span class="nav-icon">🗺️</span>
+                    Solution Architecture
+                </a>
+                <a href="#" class="nav-item" data-page="software-arch">
+                    <span class="nav-icon">⚙️</span>
+                    Software Architecture
+                </a>
+            </div>
+
+            <div class="nav-section" data-platform-section="ios">
+                <div class="nav-section-title">
+                    <span class="platform-badge ios">iOS</span>
+                    iOS / SwiftUI
+                </div>
+                <a href="#" class="nav-item" data-page="ios-arch" data-platform="ios">
+                    <span class="nav-icon">🏛️</span>
+                    Архитектура
+                </a>
+                <a href="#" class="nav-item" data-page="ios-technical" data-platform="ios">
+                    <span class="nav-icon">📱</span>
+                    Технический дизайн
+                </a>
+                <a href="#" class="nav-item" data-page="ios-adr" data-platform="ios">
+                    <span class="nav-icon">📝</span>
+                    ADR (Решения)
+                </a>
+                <a href="#" class="nav-item" data-page="ios-rfc" data-platform="ios">
+                    <span class="nav-icon">💡</span>
+                    RFC (Предложения)
+                </a>
+            </div>
+
+            <div class="nav-section" data-platform-section="android">
+                <div class="nav-section-title">
+                    <span class="platform-badge android">Android</span>
+                    Android / Kotlin
+                </div>
+                <a href="#" class="nav-item" data-page="android-arch" data-platform="android">
+                    <span class="nav-icon">🏛️</span>
+                    Архитектура
+                </a>
+                <a href="#" class="nav-item" data-page="android-technical" data-platform="android">
+                    <span class="nav-icon">📱</span>
+                    Технический дизайн
+                </a>
+                <a href="#" class="nav-item" data-page="android-adr" data-platform="android">
+                    <span class="nav-icon">📝</span>
+                    ADR (Решения)
+                </a>
+                <a href="#" class="nav-item" data-page="android-rfc" data-platform="android">
+                    <span class="nav-icon">💡</span>
+                    RFC (Предложения)
+                </a>
+            </div>
+
+            <div class="nav-section" data-platform-section="web">
+                <div class="nav-section-title">
+                    <span class="platform-badge web">Web</span>
+                    Web / Next.js
+                </div>
+                <a href="#" class="nav-item" data-page="web-arch" data-platform="web">
+                    <span class="nav-icon">🏛️</span>
+                    Архитектура
+                </a>
+                <a href="#" class="nav-item" data-page="web-technical" data-platform="web">
+                    <span class="nav-icon">🌐</span>
+                    Технический дизайн
+                </a>
+                <a href="#" class="nav-item" data-page="web-api" data-platform="web">
+                    <span class="nav-icon">🔌</span>
+                    API Reference
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">База данных</div>
+                <a href="#" class="nav-item" data-page="database">
+                    <span class="nav-icon">🗄️</span>
+                    Схема БД
+                </a>
+                <a href="#" class="nav-item" data-page="api">
+                    <span class="nav-icon">🔌</span>
+                    API Reference
+                </a>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-section-title">Сравнение</div>
+                <a href="#" class="nav-item" data-page="comparison">
+                    <span class="nav-icon">⚖️</span>
+                    iOS vs Android vs Web
+                </a>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="last-updated">Обновлено: 13 декабря 2025</div>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <span class="mobile-logo">Phuket-one</span>
+        <div class="mobile-header-actions">
+            <button class="mobile-search-btn" id="mobile-search-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+            </button>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <!-- Content will be loaded here dynamically -->
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav" id="mobile-bottom-nav">
+        <button class="bottom-nav-item active" data-page="overview">
+            <span class="bottom-nav-icon">📋</span>
+            <span class="bottom-nav-label">Обзор</span>
+        </button>
+        <button class="bottom-nav-item" data-page="system-design">
+            <span class="bottom-nav-icon">🏗️</span>
+            <span class="bottom-nav-label">Архитектура</span>
+        </button>
+        <button class="bottom-nav-item" data-page="ios-arch">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <span class="bottom-nav-label">iOS</span>
+        </button>
+        <button class="bottom-nav-item" data-page="android-arch">
+            <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-1.44-.59-3.03-.9-4.47-.9s-3.03.31-4.47.9L5.65 5.67c-.19-.29-.54-.38-.83-.22-.31.16-.42.54-.26.85L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
+            <span class="bottom-nav-label">Android</span>
+        </button>
+        <button class="bottom-nav-item" data-page="web-arch">
+            <span class="bottom-nav-icon">🌐</span>
+            <span class="bottom-nav-label">Web</span>
+        </button>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/content.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
