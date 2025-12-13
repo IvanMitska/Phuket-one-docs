@@ -15,6 +15,57 @@ const CONTENT = {
         description: 'Phuket App - комплексная туристическая платформа для Пхукета, Таиланд',
         content: `
             <div class="section">
+                <h2 class="section-title">Roadmap</h2>
+                <p class="roadmap-subtitle">8 месяцев разработки • Январь — Август 2026</p>
+
+                <div class="roadmap-modern">
+                    <div class="roadmap-track">
+                        <div class="track-line"></div>
+
+                        <div class="track-item">
+                            <div class="track-node node-1"></div>
+                            <div class="track-card">
+                                <div class="track-period">Янв — Фев</div>
+                                <h4 class="track-title">Фундамент</h4>
+                                <p class="track-desc">Настройка инфраструктуры, API, аутентификация</p>
+                            </div>
+                        </div>
+
+                        <div class="track-item">
+                            <div class="track-node node-2"></div>
+                            <div class="track-card">
+                                <div class="track-period">Мар — Апр</div>
+                                <h4 class="track-title">MVP</h4>
+                                <p class="track-desc">Транспорт, жильё, поиск, профиль</p>
+                            </div>
+                        </div>
+
+                        <div class="track-item">
+                            <div class="track-node node-3"></div>
+                            <div class="track-card">
+                                <div class="track-period">Май — Июн</div>
+                                <h4 class="track-title">ИИ + Платежи</h4>
+                                <p class="track-desc">AI-ассистент, туры, Stripe, пуши</p>
+                            </div>
+                        </div>
+
+                        <div class="track-item">
+                            <div class="track-node node-4"></div>
+                            <div class="track-card">
+                                <div class="track-period">Июл — Авг</div>
+                                <h4 class="track-title">Запуск</h4>
+                                <p class="track-desc">Лояльность, тесты, релиз в сторы</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap-cta">
+                    <a href="#" data-page="roadmap" class="link-arrow">Подробный план разработки →</a>
+                </div>
+            </div>
+
+            <div class="section">
                 <h2 class="section-title">О приложении Phuket App</h2>
                 <p>Phuket App - это комплексная мобильная платформа, которая объединяет все туристические услуги на острове Пхукет:</p>
 
@@ -196,57 +247,6 @@ const CONTENT = {
                         <div class="stat-value">40+</div>
                         <div class="stat-label">Оценка NPS</div>
                     </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Roadmap</h2>
-                <p class="roadmap-subtitle">8 месяцев разработки • Январь — Август 2026</p>
-
-                <div class="roadmap-modern">
-                    <div class="roadmap-track">
-                        <div class="track-line"></div>
-
-                        <div class="track-item">
-                            <div class="track-node node-1"></div>
-                            <div class="track-card">
-                                <div class="track-period">Янв — Фев</div>
-                                <h4 class="track-title">Фундамент</h4>
-                                <p class="track-desc">Настройка инфраструктуры, API, аутентификация</p>
-                            </div>
-                        </div>
-
-                        <div class="track-item">
-                            <div class="track-node node-2"></div>
-                            <div class="track-card">
-                                <div class="track-period">Мар — Апр</div>
-                                <h4 class="track-title">MVP</h4>
-                                <p class="track-desc">Транспорт, жильё, поиск, профиль</p>
-                            </div>
-                        </div>
-
-                        <div class="track-item">
-                            <div class="track-node node-3"></div>
-                            <div class="track-card">
-                                <div class="track-period">Май — Июн</div>
-                                <h4 class="track-title">ИИ + Платежи</h4>
-                                <p class="track-desc">AI-ассистент, туры, Stripe, пуши</p>
-                            </div>
-                        </div>
-
-                        <div class="track-item">
-                            <div class="track-node node-4"></div>
-                            <div class="track-card">
-                                <div class="track-period">Июл — Авг</div>
-                                <h4 class="track-title">Запуск</h4>
-                                <p class="track-desc">Лояльность, тесты, релиз в сторы</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="roadmap-cta">
-                    <a href="#" data-page="roadmap" class="link-arrow">Подробный план разработки →</a>
                 </div>
             </div>
         `
