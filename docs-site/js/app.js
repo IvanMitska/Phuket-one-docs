@@ -57,57 +57,69 @@ function initElements() {
     elements.navItems = document.querySelectorAll('.nav-item');
 }
 
+function handleInteraction(e) {
+    const target = e.target.closest('[data-page], [data-platform], [data-level], #mobile-menu-toggle, #mobile-overlay, #mobile-search-btn');
+    if (!target) return;
+
+    e.preventDefault();
+
+    // Navigation items (sidebar and bottom nav)
+    if (target.dataset.page) {
+        navigateTo(target.dataset.page);
+        updateBottomNavActive(target.dataset.page);
+        closeMobileMenu();
+        return;
+    }
+
+    // Platform switcher
+    if (target.dataset.platform) {
+        switchPlatform(target.dataset.platform);
+        return;
+    }
+
+    // Detail level switcher
+    if (target.dataset.level) {
+        switchDetailLevel(target.dataset.level);
+        return;
+    }
+
+    // Mobile menu toggle
+    if (target.id === 'mobile-menu-toggle') {
+        toggleMobileMenu();
+        return;
+    }
+
+    // Mobile overlay
+    if (target.id === 'mobile-overlay') {
+        closeMobileMenu();
+        return;
+    }
+
+    // Mobile search button
+    if (target.id === 'mobile-search-btn') {
+        openMobileMenu();
+        setTimeout(() => {
+            elements.searchInput?.focus();
+        }, 300);
+        return;
+    }
+}
+
 function initEventListeners() {
-    // Use event delegation for better mobile support
-    document.addEventListener('click', (e) => {
-        const target = e.target.closest('[data-page], [data-platform], [data-level], .mobile-menu-toggle, .mobile-overlay, .mobile-search-btn');
-        if (!target) return;
+    // Event delegation for click (desktop) and touchend (mobile)
+    document.addEventListener('click', handleInteraction);
 
-        // Navigation items (sidebar and bottom nav)
-        if (target.dataset.page) {
-            e.preventDefault();
-            navigateTo(target.dataset.page);
-            updateBottomNavActive(target.dataset.page);
-            closeMobileMenu();
-            return;
-        }
+    // Touch support for mobile
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
 
-        // Platform switcher
-        if (target.dataset.platform) {
-            e.preventDefault();
-            switchPlatform(target.dataset.platform);
-            return;
-        }
-
-        // Detail level switcher
-        if (target.dataset.level) {
-            e.preventDefault();
-            switchDetailLevel(target.dataset.level);
-            return;
-        }
-
-        // Mobile menu toggle
-        if (target.id === 'mobile-menu-toggle' || target.closest('#mobile-menu-toggle')) {
-            e.preventDefault();
-            toggleMobileMenu();
-            return;
-        }
-
-        // Mobile overlay
-        if (target.id === 'mobile-overlay') {
-            e.preventDefault();
-            closeMobileMenu();
-            return;
-        }
-
-        // Mobile search button
-        if (target.id === 'mobile-search-btn' || target.closest('#mobile-search-btn')) {
-            e.preventDefault();
-            openMobileMenu();
-            setTimeout(() => {
-                elements.searchInput?.focus();
-            }, 300);
-            return;
+    document.addEventListener('touchend', (e) => {
+        // Only handle tap, not scroll
+        const touchEndY = e.changedTouches[0].clientY;
+        if (Math.abs(touchEndY - touchStartY) < 10) {
+            handleInteraction(e);
         }
     });
 

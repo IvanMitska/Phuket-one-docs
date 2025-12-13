@@ -312,6 +312,7 @@ a:hover {
 
 .detail-btn span {
     font-size: 12px;
+    pointer-events: none;
 }
 
 /* Platform Switcher */
@@ -373,10 +374,12 @@ a:hover {
     width: 14px;
     height: 14px;
     flex-shrink: 0;
+    pointer-events: none;
 }
 
 svg.platform-icon {
     display: inline-block;
+    pointer-events: none;
     vertical-align: middle;
 }
 
@@ -484,6 +487,7 @@ svg.platform-icon {
     width: 20px;
     text-align: center;
     opacity: 0.9;
+    pointer-events: none;
 }
 
 /* Sidebar Footer */
@@ -1955,17 +1959,20 @@ p code, li code, td code {
 .bottom-nav-icon {
     font-size: 22px;
     line-height: 1;
+    pointer-events: none;
 }
 
 svg.bottom-nav-icon {
     width: 22px;
     height: 22px;
+    pointer-events: none;
 }
 
 .bottom-nav-label {
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.02em;
+    pointer-events: none;
 }
 
 /* Touch-friendly targets */
