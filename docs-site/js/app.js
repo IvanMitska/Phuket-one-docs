@@ -426,64 +426,113 @@ function updateMobileMenuState() {
 }
 
 // ============================================================================
-// PAGE INTERACTIONS
+// PAGE INTERACTIONS (Event Delegation - prevents memory leaks)
 // ============================================================================
 
+// Single delegated event handler - attached once, never re-attached
+let contentDelegationInitialized = false;
+
 function initPageInteractions() {
-    // Initialize tabs
-    initTabs();
+    // Only set up delegation once
+    if (!contentDelegationInitialized && elements.mainContent) {
+        elements.mainContent.addEventListener('click', handleContentClick);
+        contentDelegationInitialized = true;
+    }
 
-    // Initialize code copy buttons
-    initCodeCopy();
+    // Set cursor style for clickable cards (visual only)
+    document.querySelectorAll('#main-content .card[data-page]').forEach(card => {
+        card.style.cursor = 'pointer';
+    });
 
-    // Initialize card clicks
-    initCards();
+    // Render Mermaid diagrams
+    renderMermaidDiagrams();
 }
 
-function initTabs() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const tab = btn.dataset.tab;
-            switchTab(tab);
-        });
-    });
+// Render Mermaid diagrams in the current page
+async function renderMermaidDiagrams() {
+    if (typeof mermaid === 'undefined') return;
+
+    const mermaidContainers = document.querySelectorAll('.mermaid-diagram');
+
+    for (const container of mermaidContainers) {
+        if (container.dataset.rendered === 'true') continue;
+
+        const code = container.textContent.trim();
+        const id = 'mermaid-' + Math.random().toString(36).substr(2, 9);
+
+        try {
+            const { svg } = await mermaid.render(id, code);
+            container.innerHTML = svg;
+            container.dataset.rendered = 'true';
+        } catch (error) {
+            console.error('Mermaid render error:', error);
+            container.innerHTML = '<div class="mermaid-error">Ошибка рендеринга диаграммы</div>';
+        }
+    }
+}
+
+function handleContentClick(e) {
+    const target = e.target;
+
+    // Handle tab buttons
+    const tabBtn = target.closest('.tab-btn');
+    if (tabBtn) {
+        e.preventDefault();
+        const tab = tabBtn.dataset.tab;
+        if (tab) switchTab(tab);
+        return;
+    }
+
+    // Handle code copy buttons
+    const copyBtn = target.closest('.code-copy');
+    if (copyBtn) {
+        e.preventDefault();
+        copyCode(copyBtn);
+        return;
+    }
+
+    // Handle cards with data-page
+    const card = target.closest('.card[data-page]');
+    if (card) {
+        e.preventDefault();
+        const page = card.dataset.page;
+        if (page) navigateTo(page);
+        return;
+    }
+
+    // Handle links with data-page
+    const link = target.closest('a[data-page]');
+    if (link) {
+        e.preventDefault();
+        const page = link.dataset.page;
+        if (page) navigateTo(page);
+        return;
+    }
+
+    // Note: expandable cards and features are handled by inline onclick
+    // in content.js, so we don't handle them here to avoid double-toggle
 }
 
 function switchTab(tabId) {
-    // Update buttons
     const tabButtons = document.querySelectorAll('.tab-btn');
     tabButtons.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.dataset.tab === tabId) {
-            btn.classList.add('active');
-        }
+        btn.classList.toggle('active', btn.dataset.tab === tabId);
     });
 
-    // Update content
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(content => {
-        content.classList.remove('active');
-        if (content.id === `tab-${tabId}`) {
-            content.classList.add('active');
-        }
-    });
-}
-
-function initCodeCopy() {
-    const copyButtons = document.querySelectorAll('.code-copy');
-    copyButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            copyCode(btn);
-        });
+        content.classList.toggle('active', content.id === `tab-${tabId}`);
     });
 }
 
 function copyCode(button) {
     const codeBlock = button.closest('.code-block');
-    const code = codeBlock.querySelector('pre').textContent;
+    if (!codeBlock) return;
 
-    navigator.clipboard.writeText(code).then(() => {
+    const pre = codeBlock.querySelector('pre');
+    if (!pre) return;
+
+    navigator.clipboard.writeText(pre.textContent).then(() => {
         const originalText = button.textContent;
         button.textContent = 'Copied!';
         button.style.background = 'rgba(0, 255, 0, 0.2)';
@@ -494,31 +543,6 @@ function copyCode(button) {
         }, 2000);
     }).catch(err => {
         console.error('Failed to copy:', err);
-    });
-}
-
-function initCards() {
-    // Bind clicks on cards with data-page
-    document.querySelectorAll('.card[data-page]').forEach(card => {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', function(e) {
-            e.preventDefault();
-            const page = this.dataset.page;
-            if (page) {
-                navigateTo(page);
-            }
-        });
-    });
-
-    // Bind clicks on links with data-page
-    document.querySelectorAll('a[data-page]').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const page = this.dataset.page;
-            if (page) {
-                navigateTo(page);
-            }
-        });
     });
 }
 

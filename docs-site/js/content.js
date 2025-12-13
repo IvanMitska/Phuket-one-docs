@@ -61,7 +61,10 @@ const CONTENT = {
                 </div>
 
                 <div class="roadmap-cta">
-                    <a href="#" data-page="roadmap" class="link-arrow">Подробный план разработки →</a>
+                    <a href="#" data-page="roadmap" class="cta-button">
+                        <span class="cta-text">Подробный план разработки</span>
+                        <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </a>
                 </div>
             </div>
 
@@ -155,6 +158,114 @@ const CONTENT = {
                         </div>
                     </div>
                 </div>
+
+                <div class="ecosystem-graph">
+                    <div class="ecosystem-title">Экосистема Phuket App</div>
+                    <svg class="ecosystem-svg" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <!-- Gradients for nodes -->
+                            <linearGradient id="grad-transport" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#818CF8"/>
+                            </linearGradient>
+                            <linearGradient id="grad-housing" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#34D399"/>
+                            </linearGradient>
+                            <linearGradient id="grad-tours" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/>
+                            </linearGradient>
+                            <linearGradient id="grad-ai" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#A78BFA"/>
+                            </linearGradient>
+                            <linearGradient id="grad-payments" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#EC4899"/><stop offset="100%" stop-color="#F472B6"/>
+                            </linearGradient>
+                            <linearGradient id="grad-loyalty" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#14B8A6"/><stop offset="100%" stop-color="#2DD4BF"/>
+                            </linearGradient>
+                            <!-- Vertical gradients for top/bottom lines -->
+                            <linearGradient id="grad-housing-line" x1="0%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#34D399"/>
+                            </linearGradient>
+                            <linearGradient id="grad-payments-line" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#F472B6"/>
+                            </linearGradient>
+                            <!-- Glow filter -->
+                            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="2" result="blur"/>
+                                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+
+                        <!-- Connection lines -->
+                        <line x1="300" y1="200" x2="100" y2="80" stroke="url(#grad-transport)" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/>
+                        <line x1="300" y1="200" x2="300" y2="82" stroke="url(#grad-housing-line)" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/>
+                        <line x1="300" y1="200" x2="500" y2="80" stroke="url(#grad-tours)" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/>
+                        <line x1="300" y1="200" x2="100" y2="320" stroke="url(#grad-ai)" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/>
+                        <line x1="300" y1="200" x2="300" y2="318" stroke="url(#grad-payments-line)" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/>
+                        <line x1="300" y1="200" x2="500" y2="320" stroke="url(#grad-loyalty)" stroke-width="2.5" opacity="0.8" filter="url(#glow)"/>
+
+                        <!-- Center node -->
+                        <circle cx="300" cy="200" r="45" fill="url(#grad-transport)" opacity="0.9"/>
+                        <circle cx="300" cy="200" r="42" fill="#1e1b4b" stroke="url(#grad-transport)" stroke-width="2"/>
+                        <text x="300" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="600">Phuket</text>
+                        <text x="300" y="212" text-anchor="middle" fill="white" font-size="12" font-weight="600">App</text>
+
+                        <!-- Transport node - Car icon -->
+                        <circle cx="100" cy="80" r="32" fill="#1e1b4b" stroke="url(#grad-transport)" stroke-width="2"/>
+                        <g transform="translate(100,80)">
+                            <rect x="-14" y="-6" width="28" height="12" rx="3" fill="none" stroke="#818CF8" stroke-width="2"/>
+                            <path d="M-10,-6 L-7,-12 L7,-12 L10,-6" fill="none" stroke="#818CF8" stroke-width="2" stroke-linejoin="round"/>
+                            <circle cx="-8" cy="6" r="3" fill="#818CF8"/>
+                            <circle cx="8" cy="6" r="3" fill="#818CF8"/>
+                        </g>
+                        <text x="100" y="128" text-anchor="middle" fill="#94a3b8" font-size="10">Транспорт</text>
+
+                        <!-- Housing node - House icon -->
+                        <circle cx="300" cy="50" r="32" fill="#1e1b4b" stroke="url(#grad-housing)" stroke-width="2"/>
+                        <g transform="translate(300,50)">
+                            <path d="M0,-14 L-14,0 L-10,0 L-10,10 L10,10 L10,0 L14,0 Z" fill="none" stroke="#34D399" stroke-width="2" stroke-linejoin="round"/>
+                            <rect x="-4" y="2" width="8" height="8" fill="#34D399"/>
+                        </g>
+                        <text x="300" y="98" text-anchor="middle" fill="#94a3b8" font-size="10">Жильё</text>
+
+                        <!-- Tours node - Compass icon -->
+                        <circle cx="500" cy="80" r="32" fill="#1e1b4b" stroke="url(#grad-tours)" stroke-width="2"/>
+                        <g transform="translate(500,80)">
+                            <circle cx="0" cy="0" r="12" fill="none" stroke="#FBBF24" stroke-width="2"/>
+                            <polygon points="0,-8 3,0 0,8 -3,0" fill="#FBBF24"/>
+                            <circle cx="0" cy="0" r="2" fill="#1e1b4b"/>
+                        </g>
+                        <text x="500" y="128" text-anchor="middle" fill="#94a3b8" font-size="10">Туры</text>
+
+                        <!-- AI node - Brain/chip icon -->
+                        <circle cx="100" cy="320" r="32" fill="#1e1b4b" stroke="url(#grad-ai)" stroke-width="2"/>
+                        <g transform="translate(100,320)">
+                            <rect x="-10" y="-10" width="20" height="20" rx="3" fill="none" stroke="#A78BFA" stroke-width="2"/>
+                            <circle cx="0" cy="0" r="4" fill="#A78BFA"/>
+                            <line x1="-10" y1="0" x2="-14" y2="0" stroke="#A78BFA" stroke-width="2"/>
+                            <line x1="10" y1="0" x2="14" y2="0" stroke="#A78BFA" stroke-width="2"/>
+                            <line x1="0" y1="-10" x2="0" y2="-14" stroke="#A78BFA" stroke-width="2"/>
+                            <line x1="0" y1="10" x2="0" y2="14" stroke="#A78BFA" stroke-width="2"/>
+                        </g>
+                        <text x="100" y="370" text-anchor="middle" fill="#94a3b8" font-size="10">ИИ</text>
+
+                        <!-- Payments node - Card icon -->
+                        <circle cx="300" cy="350" r="32" fill="#1e1b4b" stroke="url(#grad-payments)" stroke-width="2"/>
+                        <g transform="translate(300,350)">
+                            <rect x="-14" y="-9" width="28" height="18" rx="2" fill="none" stroke="#F472B6" stroke-width="2"/>
+                            <line x1="-14" y1="-3" x2="14" y2="-3" stroke="#F472B6" stroke-width="3"/>
+                            <line x1="-10" y1="4" x2="-2" y2="4" stroke="#F472B6" stroke-width="2"/>
+                        </g>
+                        <text x="300" y="400" text-anchor="middle" fill="#94a3b8" font-size="10">Платежи</text>
+
+                        <!-- Loyalty node - Star icon -->
+                        <circle cx="500" cy="320" r="32" fill="#1e1b4b" stroke="url(#grad-loyalty)" stroke-width="2"/>
+                        <g transform="translate(500,320)">
+                            <polygon points="0,-12 3.5,-4 12,-4 5.5,2 8,11 0,6 -8,11 -5.5,2 -12,-4 -3.5,-4" fill="#2DD4BF"/>
+                        </g>
+                        <text x="500" y="370" text-anchor="middle" fill="#94a3b8" font-size="10">Лояльность</text>
+                    </svg>
+                </div>
             </div>
 
             <div class="section">
@@ -225,28 +336,6 @@ const CONTENT = {
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Ключевые метрики (цели 1-й год)</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-value">50K</div>
-                        <div class="stat-label">Активных пользователей в месяц</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">8%</div>
-                        <div class="stat-label">Конверсия в бронирования</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">25%</div>
-                        <div class="stat-label">Retention на 30 день</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value">40+</div>
-                        <div class="stat-label">Оценка NPS</div>
-                    </div>
                 </div>
             </div>
         `
@@ -583,68 +672,141 @@ const CONTENT = {
         content: `
             <div class="section">
                 <h2 class="section-title">1. Высокоуровневая архитектура</h2>
-                <div class="diagram-block">
-                    <pre>
-+-----------------------------------------------------------------------------+
-|                              CLIENTS                                         |
-+-----------------------------------------------------------------------------+
-|                                                                              |
-|  +------------+    +------------+    +------------+                         |
-|  |  iOS App   |    |Android App |    |  Web App   |                         |
-|  | (SwiftUI)  |    | (Kotlin)   |    |  (React)   |                         |
-|  |  [READY]   |    | [PLANNED]  |    | [PLANNED]  |                         |
-|  +-----+------+    +-----+------+    +-----+------+                         |
-|        |                 |                 |                                 |
-|        +--------+--------+--------+--------+                                 |
-|                 |                                                            |
-|                 | HTTPS (TLS 1.3) / REST API                                |
-|                 v                                                            |
-+-----------------------------------------------------------------------------+
-|                           EDGE LAYER                                         |
-+-----------------------------------------------------------------------------+
-|                                                                              |
-|  +-----------------------------------------------------------------------+  |
-|  |                         CDN (CloudFlare)                               |  |
-|  |  - SSL Termination    - DDoS Protection    - WAF                      |  |
-|  +-----------------------------------+-----------------------------------+  |
-|                                      |                                       |
-|                                      v                                       |
-|  +-----------------------------------------------------------------------+  |
-|  |                      Load Balancer (AWS ALB)                           |  |
-|  |  - Health Checks    - SSL Certificate    - Request Routing            |  |
-|  +-----------------------------------+-----------------------------------+  |
-|                                      |                                       |
-+--------------------------------------+---------------------------------------+
-|                        APPLICATION LAYER                                     |
-+--------------------------------------+---------------------------------------+
-|                                      |                                       |
-|         +------------------------+---+---+------------------------+          |
-|         |                        |       |                        |          |
-|         v                        v       v                        v          |
-|  +------------+           +------------+           +------------+            |
-|  | API Pod 1  |           | API Pod 2  |           | API Pod N  |            |
-|  | (FastAPI)  |           | (FastAPI)  |           | (FastAPI)  |            |
-|  +-----+------+           +-----+------+           +-----+------+            |
-|        |                        |                        |                   |
-|        +------------------------+------------------------+                   |
-|                                 |                                            |
-+--------------------------------------+---------------------------------------+
-|                       DATA LAYER                                             |
-+--------------------------------------+---------------------------------------+
-|                                      |                                       |
-|         +-------------------+--------+--------+-------------------+          |
-|         |                   |                 |                   |          |
-|         v                   v                 v                   v          |
-|  +------------+      +------------+      +------------+                      |
-|  | PostgreSQL |      |   Redis    |      |     S3     |                      |
-|  |  (Primary) |      |  (Cache)   |      |  (Media)   |                      |
-|  | Users,     |      | Sessions,  |      | Images,    |                      |
-|  | Bookings,  |      | Rate Limit |      | Documents  |                      |
-|  | Catalog    |      | API Cache  |      | Backups    |                      |
-|  +------------+      +------------+      +------------+                      |
-|                                                                              |
-+------------------------------------------------------------------------------+
-                    </pre>
+
+                <div class="architecture-diagram">
+                    <div class="arch-title">Архитектура системы Phuket App</div>
+                    <svg class="arch-svg" viewBox="0 0 800 580" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="arch-grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#818CF8"/>
+                            </linearGradient>
+                            <linearGradient id="arch-grad-green" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#34D399"/>
+                            </linearGradient>
+                            <linearGradient id="arch-grad-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#FBBF24"/>
+                            </linearGradient>
+                            <linearGradient id="arch-grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#A78BFA"/>
+                            </linearGradient>
+                            <linearGradient id="arch-grad-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#EC4899"/><stop offset="100%" stop-color="#F472B6"/>
+                            </linearGradient>
+                            <filter id="arch-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+                            </filter>
+                        </defs>
+
+                        <!-- CLIENTS LAYER -->
+                        <rect x="50" y="20" width="700" height="80" rx="8" fill="rgba(99,102,241,0.1)" stroke="#6366F1" stroke-width="1" stroke-dasharray="4"/>
+                        <text x="70" y="45" fill="#818CF8" font-size="11" font-weight="600">CLIENTS</text>
+
+                        <g filter="url(#arch-shadow)">
+                            <rect x="100" y="50" width="140" height="40" rx="6" fill="#1e1b4b" stroke="#6366F1" stroke-width="1.5"/>
+                            <text x="170" y="75" text-anchor="middle" fill="#e2e8f0" font-size="12">iOS App</text>
+                        </g>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="330" y="50" width="140" height="40" rx="6" fill="#1e1b4b" stroke="#6366F1" stroke-width="1.5"/>
+                            <text x="400" y="75" text-anchor="middle" fill="#e2e8f0" font-size="12">Android App</text>
+                        </g>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="560" y="50" width="140" height="40" rx="6" fill="#1e1b4b" stroke="#6366F1" stroke-width="1.5"/>
+                            <text x="630" y="75" text-anchor="middle" fill="#e2e8f0" font-size="12">Web App</text>
+                        </g>
+
+                        <!-- Connection lines: Clients to CDN -->
+                        <line x1="170" y1="90" x2="400" y2="140" stroke="#6366F1" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="400" y1="90" x2="400" y2="140" stroke="#6366F1" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="630" y1="90" x2="400" y2="140" stroke="#6366F1" stroke-width="1.5" opacity="0.6"/>
+
+                        <!-- EDGE LAYER -->
+                        <rect x="150" y="130" width="500" height="120" rx="8" fill="rgba(16,185,129,0.1)" stroke="#10B981" stroke-width="1" stroke-dasharray="4"/>
+                        <text x="170" y="155" fill="#34D399" font-size="11" font-weight="600">EDGE LAYER</text>
+
+                        <g filter="url(#arch-shadow)">
+                            <rect x="300" y="160" width="200" height="35" rx="6" fill="#1e1b4b" stroke="#10B981" stroke-width="1.5"/>
+                            <text x="400" y="183" text-anchor="middle" fill="#e2e8f0" font-size="11">Cloudflare CDN + WAF</text>
+                        </g>
+                        <line x1="400" y1="195" x2="400" y2="210" stroke="#10B981" stroke-width="1.5" opacity="0.6"/>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="300" y="210" width="200" height="35" rx="6" fill="#1e1b4b" stroke="#10B981" stroke-width="1.5"/>
+                            <text x="400" y="233" text-anchor="middle" fill="#e2e8f0" font-size="11">Load Balancer + SSL</text>
+                        </g>
+
+                        <!-- Connection lines: LB to API -->
+                        <line x1="350" y1="245" x2="250" y2="290" stroke="#F59E0B" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="400" y1="245" x2="400" y2="290" stroke="#F59E0B" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="450" y1="245" x2="550" y2="290" stroke="#F59E0B" stroke-width="1.5" opacity="0.6"/>
+
+                        <!-- APPLICATION LAYER -->
+                        <rect x="100" y="280" width="600" height="80" rx="8" fill="rgba(245,158,11,0.1)" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4"/>
+                        <text x="120" y="305" fill="#FBBF24" font-size="11" font-weight="600">APPLICATION LAYER</text>
+
+                        <g filter="url(#arch-shadow)">
+                            <rect x="150" y="310" width="120" height="40" rx="6" fill="#1e1b4b" stroke="#F59E0B" stroke-width="1.5"/>
+                            <text x="210" y="335" text-anchor="middle" fill="#e2e8f0" font-size="11">API Pod 1</text>
+                        </g>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="340" y="310" width="120" height="40" rx="6" fill="#1e1b4b" stroke="#F59E0B" stroke-width="1.5"/>
+                            <text x="400" y="335" text-anchor="middle" fill="#e2e8f0" font-size="11">API Pod 2</text>
+                        </g>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="530" y="310" width="120" height="40" rx="6" fill="#1e1b4b" stroke="#F59E0B" stroke-width="1.5"/>
+                            <text x="590" y="335" text-anchor="middle" fill="#e2e8f0" font-size="11">API Pod N</text>
+                        </g>
+
+                        <!-- Connection lines: API to Data -->
+                        <line x1="210" y1="350" x2="150" y2="410" stroke="#8B5CF6" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="400" y1="350" x2="400" y2="410" stroke="#8B5CF6" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="590" y1="350" x2="650" y2="410" stroke="#8B5CF6" stroke-width="1.5" opacity="0.6"/>
+
+                        <!-- DATA LAYER -->
+                        <rect x="50" y="400" width="350" height="80" rx="8" fill="rgba(139,92,246,0.1)" stroke="#8B5CF6" stroke-width="1" stroke-dasharray="4"/>
+                        <text x="70" y="425" fill="#A78BFA" font-size="11" font-weight="600">DATA LAYER</text>
+
+                        <g filter="url(#arch-shadow)">
+                            <rect x="70" y="435" width="95" height="35" rx="6" fill="#1e1b4b" stroke="#8B5CF6" stroke-width="1.5"/>
+                            <text x="117" y="458" text-anchor="middle" fill="#e2e8f0" font-size="10">PostgreSQL</text>
+                        </g>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="180" y="435" width="95" height="35" rx="6" fill="#1e1b4b" stroke="#8B5CF6" stroke-width="1.5"/>
+                            <text x="227" y="458" text-anchor="middle" fill="#e2e8f0" font-size="10">Redis</text>
+                        </g>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="290" y="435" width="95" height="35" rx="6" fill="#1e1b4b" stroke="#8B5CF6" stroke-width="1.5"/>
+                            <text x="337" y="458" text-anchor="middle" fill="#e2e8f0" font-size="10">R2/S3</text>
+                        </g>
+
+                        <!-- EXTERNAL SERVICES -->
+                        <rect x="420" y="400" width="330" height="80" rx="8" fill="rgba(236,72,153,0.1)" stroke="#EC4899" stroke-width="1" stroke-dasharray="4"/>
+                        <text x="440" y="425" fill="#F472B6" font-size="11" font-weight="600">EXTERNAL SERVICES</text>
+
+                        <g filter="url(#arch-shadow)">
+                            <rect x="440" y="435" width="70" height="35" rx="6" fill="#1e1b4b" stroke="#EC4899" stroke-width="1.5"/>
+                            <text x="475" y="458" text-anchor="middle" fill="#e2e8f0" font-size="10">Stripe</text>
+                        </g>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="520" y="435" width="70" height="35" rx="6" fill="#1e1b4b" stroke="#EC4899" stroke-width="1.5"/>
+                            <text x="555" y="458" text-anchor="middle" fill="#e2e8f0" font-size="10">Mapbox</text>
+                        </g>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="600" y="435" width="70" height="35" rx="6" fill="#1e1b4b" stroke="#EC4899" stroke-width="1.5"/>
+                            <text x="635" y="458" text-anchor="middle" fill="#e2e8f0" font-size="10">Resend</text>
+                        </g>
+                        <g filter="url(#arch-shadow)">
+                            <rect x="680" y="435" width="55" height="35" rx="6" fill="#1e1b4b" stroke="#EC4899" stroke-width="1.5"/>
+                            <text x="707" y="458" text-anchor="middle" fill="#e2e8f0" font-size="9">FCM</text>
+                        </g>
+
+                        <!-- Connection lines: API to External -->
+                        <line x1="400" y1="350" x2="475" y2="435" stroke="#EC4899" stroke-width="1" opacity="0.4"/>
+                        <line x1="400" y1="350" x2="555" y2="435" stroke="#EC4899" stroke-width="1" opacity="0.4"/>
+                        <line x1="400" y1="350" x2="635" y2="435" stroke="#EC4899" stroke-width="1" opacity="0.4"/>
+                        <line x1="590" y1="350" x2="707" y2="435" stroke="#EC4899" stroke-width="1" opacity="0.4"/>
+
+                        <!-- Legend -->
+                        <text x="400" y="560" text-anchor="middle" fill="#64748b" font-size="10">Стрелки показывают направление потока данных</text>
+                    </svg>
                 </div>
             </div>
 
@@ -1119,6 +1281,544 @@ PhuketApp/
                 </div>
             </div>
         `
+    },
+
+    // ========================================================================
+    // iOS ARCHITECTURE
+    // ========================================================================
+    'ios-arch': {
+        title: 'Архитектура iOS',
+        icon: null,
+        platform: 'ios',
+        breadcrumb: ['Документация', 'iOS / SwiftUI', 'Архитектура'],
+        description: 'Обзор архитектуры iOS приложения Phuket App',
+        levels: {
+            quick: `
+            <div class="section">
+                <h2 class="section-title">Обзор архитектуры</h2>
+                <div class="diagram-block">
+                    <pre>
+┌─────────────────────────────────────────────────────────────┐
+│                        SwiftUI Views                        │
+│    HomeView │ TransportView │ BookingView │ ProfileView     │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ @StateObject
+┌──────────────────────────▼──────────────────────────────────┐
+│                       ViewModels                            │
+│  HomeVM │ TransportVM │ BookingVM │ ProfileVM │ AuthVM      │
+│         @Published + async/await                            │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ protocol
+┌──────────────────────────▼──────────────────────────────────┐
+│                      Repositories                           │
+│  VehicleRepo │ PropertyRepo │ BookingRepo │ UserRepo        │
+│              Cache + Network abstraction                    │
+└──────────────────────────┬──────────────────────────────────┘
+                           │
+┌──────────────────────────▼──────────────────────────────────┐
+│                       Data Layer                            │
+│    APIClient (URLSession) │ SwiftData │ Keychain            │
+└─────────────────────────────────────────────────────────────┘
+                    </pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Ключевые компоненты</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span class="card-icon">📱</span>
+                        <h3 class="card-title">SwiftUI + MVVM</h3>
+                        <p class="card-description">Декларативный UI с реактивным state management</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">🔄</span>
+                        <h3 class="card-title">Repository Pattern</h3>
+                        <p class="card-description">Абстракция источников данных для тестируемости</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">⚡</span>
+                        <h3 class="card-title">Swift Concurrency</h3>
+                        <p class="card-description">async/await для асинхронных операций</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">💾</span>
+                        <h3 class="card-title">SwiftData</h3>
+                        <p class="card-description">Локальное хранилище с автоматической синхронизацией</p>
+                    </div>
+                </div>
+            </div>
+            `,
+
+            medium: `
+            <div class="section">
+                <h2 class="section-title">Архитектура MVVM + Repository</h2>
+                <div class="diagram-block">
+                    <pre>
+┌─────────────────────────────────────────────────────────────┐
+│                        SwiftUI Views                        │
+│    HomeView │ TransportView │ BookingView │ ProfileView     │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ @StateObject / @ObservedObject
+┌──────────────────────────▼──────────────────────────────────┐
+│                       ViewModels                            │
+│  HomeVM │ TransportVM │ BookingVM │ ProfileVM │ AuthVM      │
+│         @Published properties + async methods               │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ Protocol-based dependency
+┌──────────────────────────▼──────────────────────────────────┐
+│                      Repositories                           │
+│  VehicleRepository │ PropertyRepository │ BookingRepository │
+│              Caching strategy + Network fallback            │
+└─────────┬────────────────────────────────────┬──────────────┘
+          │                                    │
+┌─────────▼─────────┐              ┌───────────▼───────────┐
+│    APIClient      │              │    Local Storage      │
+│  URLSession       │              │  SwiftData + Keychain │
+│  SSL Pinning      │              │  Offline support      │
+└───────────────────┘              └───────────────────────┘
+                    </pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Структура проекта</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Project Structure</span>
+                    </div>
+                    <pre>PhuketApp/
+├── App/
+│   ├── PhuketApp.swift           # @main entry point
+│   └── DependencyContainer.swift # DI container
+├── Features/
+│   ├── Home/
+│   │   ├── HomeView.swift
+│   │   └── HomeViewModel.swift
+│   ├── Transport/
+│   │   ├── TransportView.swift
+│   │   ├── TransportViewModel.swift
+│   │   └── VehicleDetailView.swift
+│   ├── Accommodation/
+│   ├── Tours/
+│   ├── Booking/
+│   └── Profile/
+├── Core/
+│   ├── Network/
+│   │   ├── APIClient.swift
+│   │   ├── Endpoints.swift
+│   │   └── NetworkError.swift
+│   ├── Storage/
+│   │   ├── SwiftDataManager.swift
+│   │   └── KeychainManager.swift
+│   └── Utilities/
+├── Domain/
+│   ├── Models/
+│   │   ├── Vehicle.swift
+│   │   ├── Property.swift
+│   │   └── Booking.swift
+│   └── Repositories/
+│       ├── VehicleRepository.swift
+│       └── BookingRepository.swift
+└── Resources/
+    ├── Assets.xcassets
+    └── Localizable.strings</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dependency Injection</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Swift</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="annotation">@MainActor</span>
+<span class="keyword">final class</span> <span class="class-name">DependencyContainer</span>: <span class="class-name">ObservableObject</span> {
+    <span class="keyword">static let</span> shared = <span class="class-name">DependencyContainer</span>()
+
+    <span class="comment">// Network</span>
+    <span class="keyword">lazy var</span> apiClient = <span class="class-name">APIClient</span>()
+
+    <span class="comment">// Repositories</span>
+    <span class="keyword">lazy var</span> vehicleRepository = <span class="class-name">VehicleRepository</span>(api: apiClient)
+    <span class="keyword">lazy var</span> propertyRepository = <span class="class-name">PropertyRepository</span>(api: apiClient)
+    <span class="keyword">lazy var</span> bookingRepository = <span class="class-name">BookingRepository</span>(api: apiClient)
+
+    <span class="comment">// Services</span>
+    <span class="keyword">lazy var</span> authService = <span class="class-name">AuthService</span>(api: apiClient)
+    <span class="keyword">lazy var</span> locationService = <span class="class-name">LocationService</span>()
+}</pre>
+                </div>
+            </div>
+            `,
+
+            full: `
+            <div class="section">
+                <h2 class="section-title">Полная архитектура iOS</h2>
+                <div class="diagram-block">
+                    <pre>
+┌─────────────────────────────────────────────────────────────────────────┐
+│                            PRESENTATION LAYER                           │
+├─────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐    │
+│  │  HomeView   │  │TransportView│  │ BookingView │  │ ProfileView │    │
+│  │  SwiftUI    │  │  SwiftUI    │  │   SwiftUI   │  │   SwiftUI   │    │
+│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘    │
+│         │ @StateObject   │                │                │           │
+│  ┌──────▼──────┐  ┌──────▼──────┐  ┌──────▼──────┐  ┌──────▼──────┐    │
+│  │  HomeVM     │  │TransportVM  │  │ BookingVM   │  │ ProfileVM   │    │
+│  │ @Published  │  │ @Published  │  │ @Published  │  │ @Published  │    │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘    │
+└──────────────────────────────┬──────────────────────────────────────────┘
+                               │ Protocol-based DI
+┌──────────────────────────────▼──────────────────────────────────────────┐
+│                              DOMAIN LAYER                               │
+├─────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐         │
+│  │ VehicleRepo     │  │ PropertyRepo    │  │ BookingRepo     │         │
+│  │ Protocol        │  │ Protocol        │  │ Protocol        │         │
+│  └────────┬────────┘  └────────┬────────┘  └────────┬────────┘         │
+│           │                    │                    │                   │
+│  ┌────────▼────────────────────▼────────────────────▼────────┐         │
+│  │                    Domain Models                          │         │
+│  │  Vehicle │ Property │ Booking │ User │ Tour │ Review      │         │
+│  └───────────────────────────────────────────────────────────┘         │
+└──────────────────────────────┬──────────────────────────────────────────┘
+                               │
+┌──────────────────────────────▼──────────────────────────────────────────┐
+│                               DATA LAYER                                │
+├─────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐         │
+│  │   APIClient     │  │   SwiftData     │  │   Keychain      │         │
+│  │   URLSession    │  │   Local DB      │  │   Secure Store  │         │
+│  │   SSL Pinning   │  │   Offline Sync  │  │   Tokens        │         │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘         │
+└─────────────────────────────────────────────────────────────────────────┘
+                    </pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Структура проекта</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Project Structure</span>
+                    </div>
+                    <pre>PhuketApp/
+├── App/
+│   ├── PhuketApp.swift              # @main entry point
+│   ├── DependencyContainer.swift    # DI container
+│   └── AppCoordinator.swift         # Navigation coordinator
+│
+├── Features/
+│   ├── Home/
+│   │   ├── Views/
+│   │   │   ├── HomeView.swift
+│   │   │   ├── WeatherWidget.swift
+│   │   │   └── QuickActionsGrid.swift
+│   │   └── ViewModels/
+│   │       └── HomeViewModel.swift
+│   │
+│   ├── Transport/
+│   │   ├── Views/
+│   │   │   ├── TransportListView.swift
+│   │   │   ├── VehicleDetailView.swift
+│   │   │   ├── VehicleCard.swift
+│   │   │   └── FilterSheet.swift
+│   │   └── ViewModels/
+│   │       ├── TransportViewModel.swift
+│   │       └── VehicleDetailViewModel.swift
+│   │
+│   ├── Accommodation/
+│   │   ├── Views/
+│   │   └── ViewModels/
+│   │
+│   ├── Tours/
+│   │   ├── Views/
+│   │   └── ViewModels/
+│   │
+│   ├── Booking/
+│   │   ├── Views/
+│   │   │   ├── BookingView.swift
+│   │   │   ├── BookingConfirmation.swift
+│   │   │   └── PaymentSheet.swift
+│   │   └── ViewModels/
+│   │       └── BookingViewModel.swift
+│   │
+│   ├── Profile/
+│   │   ├── Views/
+│   │   └── ViewModels/
+│   │
+│   └── Auth/
+│       ├── Views/
+│       │   ├── LoginView.swift
+│       │   ├── RegisterView.swift
+│       │   └── ForgotPasswordView.swift
+│       └── ViewModels/
+│           └── AuthViewModel.swift
+│
+├── Core/
+│   ├── Network/
+│   │   ├── APIClient.swift
+│   │   ├── Endpoints.swift
+│   │   ├── NetworkError.swift
+│   │   ├── RequestInterceptor.swift
+│   │   └── SSLPinning.swift
+│   │
+│   ├── Storage/
+│   │   ├── SwiftDataManager.swift
+│   │   ├── KeychainManager.swift
+│   │   └── CacheManager.swift
+│   │
+│   ├── Location/
+│   │   └── LocationService.swift
+│   │
+│   └── Utilities/
+│       ├── Extensions/
+│       ├── Helpers/
+│       └── Constants.swift
+│
+├── Domain/
+│   ├── Models/
+│   │   ├── Vehicle.swift
+│   │   ├── Property.swift
+│   │   ├── Booking.swift
+│   │   ├── Tour.swift
+│   │   ├── User.swift
+│   │   └── Review.swift
+│   │
+│   └── Repositories/
+│       ├── Protocols/
+│       │   ├── VehicleRepositoryProtocol.swift
+│       │   └── BookingRepositoryProtocol.swift
+│       └── Implementations/
+│           ├── VehicleRepository.swift
+│           └── BookingRepository.swift
+│
+├── DesignSystem/
+│   ├── Components/
+│   │   ├── PrimaryButton.swift
+│   │   ├── LoadingView.swift
+│   │   └── ErrorView.swift
+│   ├── Theme/
+│   │   ├── Colors.swift
+│   │   ├── Typography.swift
+│   │   └── Spacing.swift
+│   └── Modifiers/
+│
+└── Resources/
+    ├── Assets.xcassets
+    ├── Localizable.strings
+    └── Info.plist</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Dependency Injection</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Swift</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="annotation">@MainActor</span>
+<span class="keyword">final class</span> <span class="class-name">DependencyContainer</span>: <span class="class-name">ObservableObject</span> {
+    <span class="keyword">static let</span> shared = <span class="class-name">DependencyContainer</span>()
+
+    <span class="comment">// MARK: - Network Layer</span>
+    <span class="keyword">private lazy var</span> urlSession: <span class="class-name">URLSession</span> = {
+        <span class="keyword">let</span> config = <span class="class-name">URLSessionConfiguration</span>.default
+        config.timeoutIntervalForRequest = <span class="number">30</span>
+        config.timeoutIntervalForResource = <span class="number">60</span>
+        <span class="keyword">return</span> <span class="class-name">URLSession</span>(configuration: config)
+    }()
+
+    <span class="keyword">lazy var</span> apiClient: <span class="class-name">APIClientProtocol</span> = <span class="class-name">APIClient</span>(
+        session: urlSession,
+        baseURL: <span class="class-name">Environment</span>.apiBaseURL
+    )
+
+    <span class="comment">// MARK: - Storage</span>
+    <span class="keyword">lazy var</span> keychainManager = <span class="class-name">KeychainManager</span>()
+    <span class="keyword">lazy var</span> cacheManager = <span class="class-name">CacheManager</span>()
+
+    <span class="comment">// MARK: - Repositories</span>
+    <span class="keyword">lazy var</span> vehicleRepository: <span class="class-name">VehicleRepositoryProtocol</span> = <span class="class-name">VehicleRepository</span>(
+        api: apiClient,
+        cache: cacheManager
+    )
+
+    <span class="keyword">lazy var</span> propertyRepository: <span class="class-name">PropertyRepositoryProtocol</span> = <span class="class-name">PropertyRepository</span>(
+        api: apiClient,
+        cache: cacheManager
+    )
+
+    <span class="keyword">lazy var</span> bookingRepository: <span class="class-name">BookingRepositoryProtocol</span> = <span class="class-name">BookingRepository</span>(
+        api: apiClient
+    )
+
+    <span class="comment">// MARK: - Services</span>
+    <span class="keyword">lazy var</span> authService: <span class="class-name">AuthServiceProtocol</span> = <span class="class-name">AuthService</span>(
+        api: apiClient,
+        keychain: keychainManager
+    )
+
+    <span class="keyword">lazy var</span> locationService = <span class="class-name">LocationService</span>()
+    <span class="keyword">lazy var</span> pushService = <span class="class-name">PushNotificationService</span>()
+}</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">ViewModel Pattern</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Swift</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="annotation">@MainActor</span>
+<span class="keyword">final class</span> <span class="class-name">TransportViewModel</span>: <span class="class-name">ObservableObject</span> {
+    <span class="comment">// MARK: - Published Properties</span>
+    <span class="annotation">@Published</span> <span class="keyword">private(set) var</span> vehicles: [<span class="class-name">Vehicle</span>] = []
+    <span class="annotation">@Published</span> <span class="keyword">private(set) var</span> isLoading = <span class="keyword">false</span>
+    <span class="annotation">@Published</span> <span class="keyword">private(set) var</span> error: <span class="class-name">Error</span>?
+    <span class="annotation">@Published</span> <span class="keyword">var</span> searchQuery = <span class="string">""</span>
+    <span class="annotation">@Published</span> <span class="keyword">var</span> selectedType: <span class="class-name">VehicleType</span>?
+
+    <span class="comment">// MARK: - Dependencies</span>
+    <span class="keyword">private let</span> repository: <span class="class-name">VehicleRepositoryProtocol</span>
+
+    <span class="comment">// MARK: - Computed</span>
+    <span class="keyword">var</span> filteredVehicles: [<span class="class-name">Vehicle</span>] {
+        vehicles.<span class="function">filter</span> { vehicle <span class="keyword">in</span>
+            <span class="keyword">let</span> matchesSearch = searchQuery.isEmpty ||
+                vehicle.name.<span class="function">localizedCaseInsensitiveContains</span>(searchQuery)
+            <span class="keyword">let</span> matchesType = selectedType == <span class="keyword">nil</span> ||
+                vehicle.type == selectedType
+            <span class="keyword">return</span> matchesSearch && matchesType
+        }
+    }
+
+    <span class="comment">// MARK: - Init</span>
+    <span class="keyword">init</span>(repository: <span class="class-name">VehicleRepositoryProtocol</span> = <span class="class-name">DependencyContainer</span>.shared.vehicleRepository) {
+        <span class="keyword">self</span>.repository = repository
+    }
+
+    <span class="comment">// MARK: - Methods</span>
+    <span class="keyword">func</span> <span class="function">loadVehicles</span>() <span class="keyword">async</span> {
+        isLoading = <span class="keyword">true</span>
+        error = <span class="keyword">nil</span>
+
+        <span class="keyword">do</span> {
+            vehicles = <span class="keyword">try await</span> repository.<span class="function">fetchVehicles</span>()
+        } <span class="keyword">catch</span> {
+            <span class="keyword">self</span>.error = error
+        }
+
+        isLoading = <span class="keyword">false</span>
+    }
+
+    <span class="keyword">func</span> <span class="function">refresh</span>() <span class="keyword">async</span> {
+        <span class="keyword">await</span> <span class="function">loadVehicles</span>()
+    }
+}</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Repository Implementation</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Swift</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="keyword">protocol</span> <span class="class-name">VehicleRepositoryProtocol</span> {
+    <span class="keyword">func</span> <span class="function">fetchVehicles</span>() <span class="keyword">async throws</span> -> [<span class="class-name">Vehicle</span>]
+    <span class="keyword">func</span> <span class="function">getVehicle</span>(id: <span class="class-name">String</span>) <span class="keyword">async throws</span> -> <span class="class-name">Vehicle</span>
+    <span class="keyword">func</span> <span class="function">searchVehicles</span>(query: <span class="class-name">String</span>) <span class="keyword">async throws</span> -> [<span class="class-name">Vehicle</span>]
+}
+
+<span class="keyword">final class</span> <span class="class-name">VehicleRepository</span>: <span class="class-name">VehicleRepositoryProtocol</span> {
+    <span class="keyword">private let</span> api: <span class="class-name">APIClientProtocol</span>
+    <span class="keyword">private let</span> cache: <span class="class-name">CacheManager</span>
+    <span class="keyword">private let</span> cacheKey = <span class="string">"vehicles_cache"</span>
+    <span class="keyword">private let</span> cacheTTL: <span class="class-name">TimeInterval</span> = <span class="number">300</span> <span class="comment">// 5 minutes</span>
+
+    <span class="keyword">init</span>(api: <span class="class-name">APIClientProtocol</span>, cache: <span class="class-name">CacheManager</span>) {
+        <span class="keyword">self</span>.api = api
+        <span class="keyword">self</span>.cache = cache
+    }
+
+    <span class="keyword">func</span> <span class="function">fetchVehicles</span>() <span class="keyword">async throws</span> -> [<span class="class-name">Vehicle</span>] {
+        <span class="comment">// Try cache first</span>
+        <span class="keyword">if let</span> cached: [<span class="class-name">Vehicle</span>] = cache.<span class="function">get</span>(cacheKey) {
+            <span class="keyword">return</span> cached
+        }
+
+        <span class="comment">// Fetch from API</span>
+        <span class="keyword">let</span> vehicles: [<span class="class-name">Vehicle</span>] = <span class="keyword">try await</span> api.<span class="function">request</span>(.<span class="function">vehicles</span>)
+
+        <span class="comment">// Cache results</span>
+        cache.<span class="function">set</span>(vehicles, forKey: cacheKey, ttl: cacheTTL)
+
+        <span class="keyword">return</span> vehicles
+    }
+
+    <span class="keyword">func</span> <span class="function">getVehicle</span>(id: <span class="class-name">String</span>) <span class="keyword">async throws</span> -> <span class="class-name">Vehicle</span> {
+        <span class="keyword">try await</span> api.<span class="function">request</span>(.<span class="function">vehicle</span>(id: id))
+    }
+
+    <span class="keyword">func</span> <span class="function">searchVehicles</span>(query: <span class="class-name">String</span>) <span class="keyword">async throws</span> -> [<span class="class-name">Vehicle</span>] {
+        <span class="keyword">try await</span> api.<span class="function">request</span>(.<span class="function">searchVehicles</span>(query: query))
+    }
+}</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Navigation (Coordinator)</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Swift</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="keyword">enum</span> <span class="class-name">Route</span>: <span class="class-name">Hashable</span> {
+    <span class="keyword">case</span> home
+    <span class="keyword">case</span> transport
+    <span class="keyword">case</span> vehicleDetail(id: <span class="class-name">String</span>)
+    <span class="keyword">case</span> accommodation
+    <span class="keyword">case</span> propertyDetail(id: <span class="class-name">String</span>)
+    <span class="keyword">case</span> booking(item: <span class="class-name">BookableItem</span>)
+    <span class="keyword">case</span> profile
+    <span class="keyword">case</span> settings
+}
+
+<span class="annotation">@MainActor</span>
+<span class="keyword">final class</span> <span class="class-name">AppCoordinator</span>: <span class="class-name">ObservableObject</span> {
+    <span class="annotation">@Published</span> <span class="keyword">var</span> path = <span class="class-name">NavigationPath</span>()
+    <span class="annotation">@Published</span> <span class="keyword">var</span> sheet: <span class="class-name">Route</span>?
+    <span class="annotation">@Published</span> <span class="keyword">var</span> fullScreenCover: <span class="class-name">Route</span>?
+
+    <span class="keyword">func</span> <span class="function">push</span>(_ route: <span class="class-name">Route</span>) {
+        path.<span class="function">append</span>(route)
+    }
+
+    <span class="keyword">func</span> <span class="function">pop</span>() {
+        path.<span class="function">removeLast</span>()
+    }
+
+    <span class="keyword">func</span> <span class="function">popToRoot</span>() {
+        path.<span class="function">removeLast</span>(path.count)
+    }
+
+    <span class="keyword">func</span> <span class="function">present</span>(_ route: <span class="class-name">Route</span>) {
+        sheet = route
+    }
+}</pre>
+                </div>
+            </div>
+            `
+        }
     },
 
     // ========================================================================
@@ -4431,53 +5131,148 @@ app/api/
 
             <div class="section">
                 <h2 class="section-title">10. Database Schema (Prisma)</h2>
-                <div class="diagram-block">
-                    <pre>
-┌───────────────────────────────────────────────────────────────────────────┐
-│                           DATABASE SCHEMA                                  │
-├───────────────────────────────────────────────────────────────────────────┤
-│                                                                            │
-│  ┌─────────────┐         ┌─────────────┐         ┌─────────────┐          │
-│  │   Account   │         │    User     │         │   Session   │          │
-│  │─────────────│         │─────────────│         │─────────────│          │
-│  │ userId (FK) │────────►│ id (PK)     │◄────────│ userId (FK) │          │
-│  │ provider    │         │ email       │         │ sessionToken│          │
-│  │ providerAcct│         │ password    │         │ expires     │          │
-│  └─────────────┘         │ name, role  │         └─────────────┘          │
-│                          └──────┬──────┘                                   │
-│                                 │                                          │
-│        ┌────────────────────────┼────────────────────────┐                │
-│        │                        │                        │                │
-│        ▼                        ▼                        ▼                │
-│  ┌─────────────┐         ┌─────────────┐         ┌─────────────┐          │
-│  │  Property   │         │   Vehicle   │         │    Tour     │          │
-│  │─────────────│         │─────────────│         │─────────────│          │
-│  │ id, title   │         │ id, title   │         │ id, title   │          │
-│  │ vendorId    │         │ vendorId    │         │ vendorId    │          │
-│  │ type, price │         │ type, brand │         │ category    │          │
-│  │ amenities[] │         │ pricePerDay │         │ duration    │          │
-│  │ images[]    │         │ features[]  │         │ price       │          │
-│  │ location    │         │ images[]    │         │ images[]    │          │
-│  └──────┬──────┘         └──────┬──────┘         └──────┬──────┘          │
-│         │                       │                       │                 │
-│         └───────────────────────┼───────────────────────┘                 │
-│                                 │                                          │
-│         ┌───────────────────────┼───────────────────────┐                 │
-│         │                       │                       │                 │
-│         ▼                       ▼                       ▼                 │
-│  ┌─────────────┐         ┌─────────────┐         ┌─────────────┐          │
-│  │   Booking   │         │   Review    │         │  Favorite   │          │
-│  │─────────────│         │─────────────│         │─────────────│          │
-│  │ userId      │         │ userId      │         │ userId      │          │
-│  │ propertyId  │         │ propertyId  │         │ propertyId  │          │
-│  │ vehicleId   │         │ rating      │         │ vehicleId   │          │
-│  │ tourId      │         │ comment     │         │ tourId      │          │
-│  │ dates, price│         │ images[]    │         │ createdAt   │          │
-│  │ status      │         │             │         │             │          │
-│  └─────────────┘         └─────────────┘         └─────────────┘          │
-│                                                                            │
-└───────────────────────────────────────────────────────────────────────────┘
-                    </pre>
+
+                <div class="mermaid-container">
+                    <div class="diagram-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        ER-диаграмма базы данных Phuket App
+                    </div>
+                    <div class="mermaid-diagram">
+erDiagram
+    USER ||--o{ ACCOUNT : has
+    USER ||--o{ SESSION : has
+    USER ||--o{ BOOKING : creates
+    USER ||--o{ REVIEW : writes
+    USER ||--o{ FAVORITE : saves
+
+    USER {
+        string id PK
+        string email UK
+        string password
+        string name
+        string phone
+        string image
+        enum role
+        enum loyaltyLevel
+        int loyaltyPoints
+        datetime createdAt
+    }
+
+    ACCOUNT {
+        string id PK
+        string userId FK
+        string provider
+        string providerAccountId
+        string accessToken
+        string refreshToken
+    }
+
+    SESSION {
+        string id PK
+        string userId FK
+        string sessionToken UK
+        datetime expires
+    }
+
+    PROPERTY ||--o{ BOOKING : booked
+    PROPERTY ||--o{ REVIEW : reviewed
+    PROPERTY ||--o{ FAVORITE : favorited
+    VENDOR ||--o{ PROPERTY : owns
+
+    PROPERTY {
+        string id PK
+        string vendorId FK
+        string title
+        enum type
+        text description
+        decimal pricePerNight
+        json amenities
+        json images
+        json location
+        float rating
+        int reviewCount
+        boolean isAvailable
+    }
+
+    VEHICLE ||--o{ BOOKING : rented
+    VEHICLE ||--o{ REVIEW : reviewed
+    VENDOR ||--o{ VEHICLE : owns
+
+    VEHICLE {
+        string id PK
+        string vendorId FK
+        string title
+        enum type
+        string brand
+        string model
+        int year
+        decimal pricePerDay
+        json features
+        json images
+        boolean isAvailable
+    }
+
+    TOUR ||--o{ BOOKING : booked
+    TOUR ||--o{ REVIEW : reviewed
+    VENDOR ||--o{ TOUR : offers
+
+    TOUR {
+        string id PK
+        string vendorId FK
+        string title
+        enum category
+        int durationHours
+        decimal price
+        text description
+        json images
+        json included
+        int maxParticipants
+    }
+
+    BOOKING {
+        string id PK
+        string userId FK
+        string propertyId FK
+        string vehicleId FK
+        string tourId FK
+        datetime startDate
+        datetime endDate
+        decimal totalPrice
+        enum status
+        enum paymentStatus
+        string stripePaymentId
+    }
+
+    REVIEW {
+        string id PK
+        string userId FK
+        string propertyId FK
+        string vehicleId FK
+        string tourId FK
+        int rating
+        text comment
+        json images
+        datetime createdAt
+    }
+
+    FAVORITE {
+        string id PK
+        string userId FK
+        string propertyId FK
+        string vehicleId FK
+        string tourId FK
+        datetime createdAt
+    }
+
+    VENDOR {
+        string id PK
+        string userId FK
+        string companyName
+        string description
+        boolean isVerified
+        float rating
+    }
+                    </div>
                 </div>
             </div>
 
@@ -6851,6 +7646,581 @@ STRIPE_WEBHOOK_SECRET=whsec_xxx
     },
 
     // ========================================================================
+    // WEB API REFERENCE
+    // ========================================================================
+    'web-api': {
+        title: 'API Reference',
+        icon: null,
+        platform: 'web',
+        breadcrumb: ['Документация', 'Web / Next.js', 'API Reference'],
+        description: 'API Routes и интеграции для Web приложения',
+        levels: {
+            quick: `
+            <div class="section">
+                <h2 class="section-title">API Routes</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Route</th>
+                                <th>Method</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>/api/auth/[...nextauth]</code></td><td>ALL</td><td>NextAuth.js endpoints</td></tr>
+                            <tr><td><code>/api/vehicles</code></td><td>GET</td><td>List vehicles</td></tr>
+                            <tr><td><code>/api/vehicles/[id]</code></td><td>GET</td><td>Vehicle details</td></tr>
+                            <tr><td><code>/api/properties</code></td><td>GET</td><td>List properties</td></tr>
+                            <tr><td><code>/api/bookings</code></td><td>GET, POST</td><td>User bookings</td></tr>
+                            <tr><td><code>/api/payments/create-intent</code></td><td>POST</td><td>Create Stripe intent</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Ключевые интеграции</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <span class="card-icon">🔐</span>
+                        <h3 class="card-title">NextAuth.js</h3>
+                        <p class="card-description">OAuth, JWT, session management</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">💳</span>
+                        <h3 class="card-title">Stripe</h3>
+                        <p class="card-description">Payments, webhooks, subscriptions</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">🗺️</span>
+                        <h3 class="card-title">Mapbox</h3>
+                        <p class="card-description">Maps, geocoding, directions</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">📊</span>
+                        <h3 class="card-title">React Query</h3>
+                        <p class="card-description">Data fetching, caching, mutations</p>
+                    </div>
+                </div>
+            </div>
+            `,
+
+            medium: `
+            <div class="section">
+                <h2 class="section-title">API Routes Structure</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Project Structure</span>
+                    </div>
+                    <pre>app/api/
+├── auth/
+│   └── [...nextauth]/
+│       └── route.ts        # NextAuth.js handler
+├── vehicles/
+│   ├── route.ts            # GET /api/vehicles
+│   └── [id]/
+│       └── route.ts        # GET /api/vehicles/:id
+├── properties/
+│   ├── route.ts            # GET /api/properties
+│   └── [id]/
+│       └── route.ts        # GET /api/properties/:id
+├── bookings/
+│   └── route.ts            # GET, POST /api/bookings
+├── payments/
+│   ├── create-intent/
+│   │   └── route.ts        # POST - Create payment intent
+│   └── webhook/
+│       └── route.ts        # POST - Stripe webhook
+└── user/
+    └── route.ts            # GET, PATCH /api/user</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">API Route Example</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">TypeScript</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="comment">// app/api/vehicles/route.ts</span>
+<span class="keyword">import</span> { <span class="class-name">NextRequest</span>, <span class="class-name">NextResponse</span> } <span class="keyword">from</span> <span class="string">'next/server'</span>
+<span class="keyword">import</span> { db } <span class="keyword">from</span> <span class="string">'@/lib/db'</span>
+<span class="keyword">import</span> { <span class="class-name">VehicleSchema</span> } <span class="keyword">from</span> <span class="string">'@/lib/validations'</span>
+
+<span class="keyword">export async function</span> <span class="function">GET</span>(request: <span class="class-name">NextRequest</span>) {
+  <span class="keyword">const</span> { searchParams } = <span class="keyword">new</span> <span class="class-name">URL</span>(request.url)
+  <span class="keyword">const</span> type = searchParams.<span class="function">get</span>(<span class="string">'type'</span>)
+  <span class="keyword">const</span> minPrice = searchParams.<span class="function">get</span>(<span class="string">'minPrice'</span>)
+  <span class="keyword">const</span> maxPrice = searchParams.<span class="function">get</span>(<span class="string">'maxPrice'</span>)
+
+  <span class="keyword">const</span> vehicles = <span class="keyword">await</span> db.vehicle.<span class="function">findMany</span>({
+    <span class="keyword">where</span>: {
+      ...(type && { type }),
+      ...(minPrice && { priceDay: { gte: <span class="class-name">Number</span>(minPrice) } }),
+      ...(maxPrice && { priceDay: { lte: <span class="class-name">Number</span>(maxPrice) } }),
+      isAvailable: <span class="keyword">true</span>,
+    },
+    <span class="keyword">include</span>: {
+      partner: { <span class="keyword">select</span>: { name: <span class="keyword">true</span>, rating: <span class="keyword">true</span> } },
+    },
+    <span class="keyword">orderBy</span>: { priceDay: <span class="string">'asc'</span> },
+  })
+
+  <span class="keyword">return</span> <span class="class-name">NextResponse</span>.<span class="function">json</span>(vehicles)
+}</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">React Query Integration</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">TypeScript</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="comment">// hooks/use-vehicles.ts</span>
+<span class="keyword">import</span> { useQuery } <span class="keyword">from</span> <span class="string">'@tanstack/react-query'</span>
+
+<span class="keyword">interface</span> <span class="class-name">VehicleFilters</span> {
+  type?: <span class="class-name">string</span>
+  minPrice?: <span class="class-name">number</span>
+  maxPrice?: <span class="class-name">number</span>
+}
+
+<span class="keyword">export function</span> <span class="function">useVehicles</span>(filters: <span class="class-name">VehicleFilters</span> = {}) {
+  <span class="keyword">return</span> <span class="function">useQuery</span>({
+    queryKey: [<span class="string">'vehicles'</span>, filters],
+    queryFn: <span class="keyword">async</span> () => {
+      <span class="keyword">const</span> params = <span class="keyword">new</span> <span class="class-name">URLSearchParams</span>()
+      <span class="keyword">if</span> (filters.type) params.<span class="function">set</span>(<span class="string">'type'</span>, filters.type)
+      <span class="keyword">if</span> (filters.minPrice) params.<span class="function">set</span>(<span class="string">'minPrice'</span>, <span class="class-name">String</span>(filters.minPrice))
+      <span class="keyword">if</span> (filters.maxPrice) params.<span class="function">set</span>(<span class="string">'maxPrice'</span>, <span class="class-name">String</span>(filters.maxPrice))
+
+      <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">\`/api/vehicles?\${params}\`</span>)
+      <span class="keyword">if</span> (!res.ok) <span class="keyword">throw new</span> <span class="class-name">Error</span>(<span class="string">'Failed to fetch'</span>)
+      <span class="keyword">return</span> res.<span class="function">json</span>()
+    },
+    staleTime: <span class="number">5</span> * <span class="number">60</span> * <span class="number">1000</span>, <span class="comment">// 5 minutes</span>
+  })
+}</pre>
+                </div>
+            </div>
+            `,
+
+            full: `
+            <div class="section">
+                <h2 class="section-title">Полная структура API</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">Project Structure</span>
+                    </div>
+                    <pre>app/api/
+├── auth/
+│   └── [...nextauth]/
+│       └── route.ts              # NextAuth.js handler
+│
+├── vehicles/
+│   ├── route.ts                  # GET - List, POST - Create (admin)
+│   ├── [id]/
+│   │   └── route.ts              # GET - Detail, PATCH, DELETE
+│   └── search/
+│       └── route.ts              # GET - Full-text search
+│
+├── properties/
+│   ├── route.ts                  # GET - List with filters
+│   ├── [id]/
+│   │   └── route.ts              # GET - Detail
+│   └── featured/
+│       └── route.ts              # GET - Featured properties
+│
+├── tours/
+│   ├── route.ts                  # GET - List tours
+│   └── [id]/
+│       ├── route.ts              # GET - Tour detail
+│       └── availability/
+│           └── route.ts          # GET - Check availability
+│
+├── bookings/
+│   ├── route.ts                  # GET - User bookings, POST - Create
+│   ├── [id]/
+│   │   └── route.ts              # GET, PATCH - Update status
+│   └── upcoming/
+│       └── route.ts              # GET - Upcoming bookings
+│
+├── payments/
+│   ├── create-intent/
+│   │   └── route.ts              # POST - Create Stripe PaymentIntent
+│   ├── confirm/
+│   │   └── route.ts              # POST - Confirm payment
+│   └── webhook/
+│       └── route.ts              # POST - Stripe webhooks
+│
+├── user/
+│   ├── route.ts                  # GET, PATCH - Current user
+│   ├── favorites/
+│   │   └── route.ts              # GET, POST, DELETE
+│   └── loyalty/
+│       └── route.ts              # GET - Loyalty status
+│
+└── admin/
+    ├── vehicles/
+    ├── properties/
+    └── bookings/</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">NextAuth.js Configuration</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">TypeScript</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="comment">// lib/auth.ts</span>
+<span class="keyword">import</span> { <span class="class-name">NextAuthOptions</span> } <span class="keyword">from</span> <span class="string">'next-auth'</span>
+<span class="keyword">import</span> <span class="class-name">CredentialsProvider</span> <span class="keyword">from</span> <span class="string">'next-auth/providers/credentials'</span>
+<span class="keyword">import</span> <span class="class-name">GoogleProvider</span> <span class="keyword">from</span> <span class="string">'next-auth/providers/google'</span>
+<span class="keyword">import</span> { <span class="class-name">PrismaAdapter</span> } <span class="keyword">from</span> <span class="string">'@auth/prisma-adapter'</span>
+<span class="keyword">import</span> { db } <span class="keyword">from</span> <span class="string">'@/lib/db'</span>
+<span class="keyword">import</span> { compare } <span class="keyword">from</span> <span class="string">'bcryptjs'</span>
+
+<span class="keyword">export const</span> authOptions: <span class="class-name">NextAuthOptions</span> = {
+  adapter: <span class="function">PrismaAdapter</span>(db),
+  session: { strategy: <span class="string">'jwt'</span> },
+  pages: {
+    signIn: <span class="string">'/login'</span>,
+    error: <span class="string">'/login'</span>,
+  },
+  providers: [
+    <span class="function">GoogleProvider</span>({
+      clientId: process.env.<span class="class-name">GOOGLE_CLIENT_ID</span>!,
+      clientSecret: process.env.<span class="class-name">GOOGLE_CLIENT_SECRET</span>!,
+    }),
+    <span class="function">CredentialsProvider</span>({
+      name: <span class="string">'credentials'</span>,
+      credentials: {
+        email: { label: <span class="string">'Email'</span>, type: <span class="string">'email'</span> },
+        password: { label: <span class="string">'Password'</span>, type: <span class="string">'password'</span> },
+      },
+      <span class="keyword">async</span> <span class="function">authorize</span>(credentials) {
+        <span class="keyword">if</span> (!credentials?.email || !credentials?.password) {
+          <span class="keyword">throw new</span> <span class="class-name">Error</span>(<span class="string">'Invalid credentials'</span>)
+        }
+
+        <span class="keyword">const</span> user = <span class="keyword">await</span> db.user.<span class="function">findUnique</span>({
+          <span class="keyword">where</span>: { email: credentials.email },
+        })
+
+        <span class="keyword">if</span> (!user || !user.password) {
+          <span class="keyword">throw new</span> <span class="class-name">Error</span>(<span class="string">'Invalid credentials'</span>)
+        }
+
+        <span class="keyword">const</span> isValid = <span class="keyword">await</span> <span class="function">compare</span>(credentials.password, user.password)
+
+        <span class="keyword">if</span> (!isValid) {
+          <span class="keyword">throw new</span> <span class="class-name">Error</span>(<span class="string">'Invalid credentials'</span>)
+        }
+
+        <span class="keyword">return</span> {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          image: user.image,
+        }
+      },
+    }),
+  ],
+  callbacks: {
+    <span class="keyword">async</span> <span class="function">jwt</span>({ token, user }) {
+      <span class="keyword">if</span> (user) {
+        token.id = user.id
+      }
+      <span class="keyword">return</span> token
+    },
+    <span class="keyword">async</span> <span class="function">session</span>({ session, token }) {
+      <span class="keyword">if</span> (session.user) {
+        session.user.id = token.id <span class="keyword">as</span> <span class="class-name">string</span>
+      }
+      <span class="keyword">return</span> session
+    },
+  },
+}</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Stripe Integration</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">TypeScript</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="comment">// app/api/payments/create-intent/route.ts</span>
+<span class="keyword">import</span> { <span class="class-name">NextRequest</span>, <span class="class-name">NextResponse</span> } <span class="keyword">from</span> <span class="string">'next/server'</span>
+<span class="keyword">import</span> { getServerSession } <span class="keyword">from</span> <span class="string">'next-auth'</span>
+<span class="keyword">import</span> <span class="class-name">Stripe</span> <span class="keyword">from</span> <span class="string">'stripe'</span>
+<span class="keyword">import</span> { authOptions } <span class="keyword">from</span> <span class="string">'@/lib/auth'</span>
+<span class="keyword">import</span> { db } <span class="keyword">from</span> <span class="string">'@/lib/db'</span>
+
+<span class="keyword">const</span> stripe = <span class="keyword">new</span> <span class="class-name">Stripe</span>(process.env.<span class="class-name">STRIPE_SECRET_KEY</span>!)
+
+<span class="keyword">export async function</span> <span class="function">POST</span>(request: <span class="class-name">NextRequest</span>) {
+  <span class="keyword">const</span> session = <span class="keyword">await</span> <span class="function">getServerSession</span>(authOptions)
+
+  <span class="keyword">if</span> (!session?.user) {
+    <span class="keyword">return</span> <span class="class-name">NextResponse</span>.<span class="function">json</span>(
+      { error: <span class="string">'Unauthorized'</span> },
+      { status: <span class="number">401</span> }
+    )
+  }
+
+  <span class="keyword">const</span> { bookingId, amount, currency = <span class="string">'thb'</span> } = <span class="keyword">await</span> request.<span class="function">json</span>()
+
+  <span class="comment">// Verify booking exists and belongs to user</span>
+  <span class="keyword">const</span> booking = <span class="keyword">await</span> db.booking.<span class="function">findFirst</span>({
+    <span class="keyword">where</span>: {
+      id: bookingId,
+      userId: session.user.id,
+      paymentStatus: <span class="string">'pending'</span>,
+    },
+  })
+
+  <span class="keyword">if</span> (!booking) {
+    <span class="keyword">return</span> <span class="class-name">NextResponse</span>.<span class="function">json</span>(
+      { error: <span class="string">'Booking not found'</span> },
+      { status: <span class="number">404</span> }
+    )
+  }
+
+  <span class="comment">// Create PaymentIntent</span>
+  <span class="keyword">const</span> paymentIntent = <span class="keyword">await</span> stripe.paymentIntents.<span class="function">create</span>({
+    amount: <span class="class-name">Math</span>.<span class="function">round</span>(amount * <span class="number">100</span>), <span class="comment">// Convert to smallest unit</span>
+    currency,
+    metadata: {
+      bookingId,
+      userId: session.user.id,
+    },
+    automatic_payment_methods: { enabled: <span class="keyword">true</span> },
+  })
+
+  <span class="comment">// Update booking with payment intent</span>
+  <span class="keyword">await</span> db.booking.<span class="function">update</span>({
+    <span class="keyword">where</span>: { id: bookingId },
+    <span class="keyword">data</span>: { stripePaymentIntentId: paymentIntent.id },
+  })
+
+  <span class="keyword">return</span> <span class="class-name">NextResponse</span>.<span class="function">json</span>({
+    clientSecret: paymentIntent.client_secret,
+  })
+}</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Stripe Webhook Handler</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">TypeScript</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="comment">// app/api/payments/webhook/route.ts</span>
+<span class="keyword">import</span> { headers } <span class="keyword">from</span> <span class="string">'next/headers'</span>
+<span class="keyword">import</span> { <span class="class-name">NextResponse</span> } <span class="keyword">from</span> <span class="string">'next/server'</span>
+<span class="keyword">import</span> <span class="class-name">Stripe</span> <span class="keyword">from</span> <span class="string">'stripe'</span>
+<span class="keyword">import</span> { db } <span class="keyword">from</span> <span class="string">'@/lib/db'</span>
+
+<span class="keyword">const</span> stripe = <span class="keyword">new</span> <span class="class-name">Stripe</span>(process.env.<span class="class-name">STRIPE_SECRET_KEY</span>!)
+<span class="keyword">const</span> webhookSecret = process.env.<span class="class-name">STRIPE_WEBHOOK_SECRET</span>!
+
+<span class="keyword">export async function</span> <span class="function">POST</span>(request: <span class="class-name">Request</span>) {
+  <span class="keyword">const</span> body = <span class="keyword">await</span> request.<span class="function">text</span>()
+  <span class="keyword">const</span> signature = <span class="function">headers</span>().<span class="function">get</span>(<span class="string">'stripe-signature'</span>)!
+
+  <span class="keyword">let</span> event: <span class="class-name">Stripe.Event</span>
+
+  <span class="keyword">try</span> {
+    event = stripe.webhooks.<span class="function">constructEvent</span>(body, signature, webhookSecret)
+  } <span class="keyword">catch</span> (err) {
+    <span class="keyword">return</span> <span class="class-name">NextResponse</span>.<span class="function">json</span>(
+      { error: <span class="string">'Webhook signature verification failed'</span> },
+      { status: <span class="number">400</span> }
+    )
+  }
+
+  <span class="keyword">switch</span> (event.type) {
+    <span class="keyword">case</span> <span class="string">'payment_intent.succeeded'</span>: {
+      <span class="keyword">const</span> paymentIntent = event.data.object <span class="keyword">as</span> <span class="class-name">Stripe.PaymentIntent</span>
+      <span class="keyword">const</span> bookingId = paymentIntent.metadata.bookingId
+
+      <span class="keyword">await</span> db.booking.<span class="function">update</span>({
+        <span class="keyword">where</span>: { id: bookingId },
+        <span class="keyword">data</span>: {
+          paymentStatus: <span class="string">'paid'</span>,
+          status: <span class="string">'confirmed'</span>,
+          paidAt: <span class="keyword">new</span> <span class="class-name">Date</span>(),
+        },
+      })
+      <span class="keyword">break</span>
+    }
+
+    <span class="keyword">case</span> <span class="string">'payment_intent.payment_failed'</span>: {
+      <span class="keyword">const</span> paymentIntent = event.data.object <span class="keyword">as</span> <span class="class-name">Stripe.PaymentIntent</span>
+      <span class="keyword">const</span> bookingId = paymentIntent.metadata.bookingId
+
+      <span class="keyword">await</span> db.booking.<span class="function">update</span>({
+        <span class="keyword">where</span>: { id: bookingId },
+        <span class="keyword">data</span>: { paymentStatus: <span class="string">'failed'</span> },
+      })
+      <span class="keyword">break</span>
+    }
+  }
+
+  <span class="keyword">return</span> <span class="class-name">NextResponse</span>.<span class="function">json</span>({ received: <span class="keyword">true</span> })
+}</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">React Query Hooks</h2>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-lang">TypeScript</span>
+                        <button class="code-copy" onclick="copyCode(this)">Copy</button>
+                    </div>
+                    <pre><span class="comment">// hooks/use-vehicles.ts</span>
+<span class="keyword">import</span> { useQuery, useMutation, useQueryClient } <span class="keyword">from</span> <span class="string">'@tanstack/react-query'</span>
+<span class="keyword">import</span> { <span class="class-name">Vehicle</span>, <span class="class-name">VehicleFilters</span> } <span class="keyword">from</span> <span class="string">'@/types'</span>
+
+<span class="keyword">export function</span> <span class="function">useVehicles</span>(filters: <span class="class-name">VehicleFilters</span> = {}) {
+  <span class="keyword">return</span> <span class="function">useQuery</span>({
+    queryKey: [<span class="string">'vehicles'</span>, filters],
+    queryFn: <span class="keyword">async</span> (): <span class="class-name">Promise</span>&lt;<span class="class-name">Vehicle</span>[]&gt; => {
+      <span class="keyword">const</span> params = <span class="keyword">new</span> <span class="class-name">URLSearchParams</span>()
+      <span class="class-name">Object</span>.<span class="function">entries</span>(filters).<span class="function">forEach</span>(([key, value]) => {
+        <span class="keyword">if</span> (value !== <span class="keyword">undefined</span>) {
+          params.<span class="function">set</span>(key, <span class="class-name">String</span>(value))
+        }
+      })
+
+      <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">\`/api/vehicles?\${params}\`</span>)
+      <span class="keyword">if</span> (!res.ok) <span class="keyword">throw new</span> <span class="class-name">Error</span>(<span class="string">'Failed to fetch vehicles'</span>)
+      <span class="keyword">return</span> res.<span class="function">json</span>()
+    },
+    staleTime: <span class="number">5</span> * <span class="number">60</span> * <span class="number">1000</span>,
+  })
+}
+
+<span class="keyword">export function</span> <span class="function">useVehicle</span>(id: <span class="class-name">string</span>) {
+  <span class="keyword">return</span> <span class="function">useQuery</span>({
+    queryKey: [<span class="string">'vehicle'</span>, id],
+    queryFn: <span class="keyword">async</span> (): <span class="class-name">Promise</span>&lt;<span class="class-name">Vehicle</span>&gt; => {
+      <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">\`/api/vehicles/\${id}\`</span>)
+      <span class="keyword">if</span> (!res.ok) <span class="keyword">throw new</span> <span class="class-name">Error</span>(<span class="string">'Vehicle not found'</span>)
+      <span class="keyword">return</span> res.<span class="function">json</span>()
+    },
+    enabled: !!id,
+  })
+}
+
+<span class="comment">// hooks/use-bookings.ts</span>
+<span class="keyword">export function</span> <span class="function">useCreateBooking</span>() {
+  <span class="keyword">const</span> queryClient = <span class="function">useQueryClient</span>()
+
+  <span class="keyword">return</span> <span class="function">useMutation</span>({
+    mutationFn: <span class="keyword">async</span> (data: <span class="class-name">CreateBookingInput</span>) => {
+      <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'/api/bookings'</span>, {
+        method: <span class="string">'POST'</span>,
+        headers: { <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span> },
+        body: <span class="class-name">JSON</span>.<span class="function">stringify</span>(data),
+      })
+      <span class="keyword">if</span> (!res.ok) <span class="keyword">throw new</span> <span class="class-name">Error</span>(<span class="string">'Failed to create booking'</span>)
+      <span class="keyword">return</span> res.<span class="function">json</span>()
+    },
+    onSuccess: () => {
+      queryClient.<span class="function">invalidateQueries</span>({ queryKey: [<span class="string">'bookings'</span>] })
+    },
+  })
+}</pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Диаграммы процессов</h2>
+
+                <div class="mermaid-container">
+                    <div class="diagram-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        Sequence: OAuth авторизация через Google
+                    </div>
+                    <div class="mermaid-diagram">
+sequenceDiagram
+    participant U as User
+    participant A as App
+    participant NA as NextAuth
+    participant G as Google OAuth
+    participant DB as Database
+
+    U->>A: Клик "Войти через Google"
+    A->>NA: signIn('google')
+    NA->>G: Redirect to Google
+    G->>U: Форма входа Google
+    U->>G: Логин + пароль
+    G->>NA: Authorization code
+    NA->>G: Обмен на tokens
+    G-->>NA: access_token + id_token
+    NA->>DB: Upsert User
+    DB-->>NA: User created/updated
+    NA->>A: JWT Session Token
+    A->>U: Redirect + Logged in
+                    </div>
+                </div>
+
+                <div class="mermaid-container" style="margin-top: 32px;">
+                    <div class="diagram-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        Sequence: Процесс бронирования и оплаты
+                    </div>
+                    <div class="mermaid-diagram">
+sequenceDiagram
+    participant U as User
+    participant A as App
+    participant API as API Route
+    participant S as Stripe
+    participant DB as Database
+
+    U->>A: Выбрать даты + Submit
+    A->>API: POST /api/bookings
+    API->>DB: Проверить доступность
+    DB-->>API: Dates available
+    API->>DB: Создать booking (pending)
+    DB-->>API: Booking ID
+    API-->>A: { bookingId, amount }
+
+    A->>API: POST /api/payments/create-intent
+    API->>S: Create PaymentIntent
+    S-->>API: client_secret
+    API-->>A: { clientSecret }
+
+    A->>U: Показать форму оплаты
+    U->>A: Ввод карты + Submit
+    A->>S: confirmPayment(clientSecret)
+    S-->>A: Payment success
+
+    S->>API: Webhook: payment_intent.succeeded
+    API->>DB: Update booking (confirmed)
+    API->>U: Email подтверждения
+
+    A->>U: Redirect: Success page
+                    </div>
+                </div>
+            </div>
+            `
+        }
+    },
+
+    // ========================================================================
     // API REFERENCE
     // ========================================================================
     api: {
@@ -7459,18 +8829,96 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                 <p><strong>Период:</strong> Январь 2026 — Август 2026<br>
                 <strong>Команда:</strong> 2-3 Full-stack разработчика</p>
 
-                <div class="diagram-block">
-                    <pre>
-   ЯНВАРЬ       ФЕВРАЛЬ        МАРТ        АПРЕЛЬ         МАЙ          ИЮНЬ         ИЮЛЬ       АВГУСТ
-+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
-|  СПРИНТ   |  СПРИНТ   |  СПРИНТ   |  СПРИНТ   |  СПРИНТ   |  СПРИНТ   |  СПРИНТ   |  СПРИНТ   |
-|   1-2     |   3-4     |   5-6     |   7-8     |   9-10    |   11-12   |   13-14   |   15-16   |
-+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
-| Бэкенд    |Бронирова- | Платежи   |  Панель   |Продвинутые| Полировка | Тестиро-  |  Запуск   |
-|   API     |ния+Отзывы | и Пуши    | Вендора   |  фичи     |   и QA    | вание+Beta| и Релиз   |
-+-----------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
-    MVP         v0.4        v0.6        v0.8       v0.9       v1.0-RC    v1.0-BETA    РЕЛИЗ
-                    </pre>
+                <div class="gantt-timeline">
+                    <div class="gantt-header">
+                        <div class="gantt-title">План разработки 2026</div>
+                        <div class="gantt-months">
+                            <span>Янв</span>
+                            <span>Фев</span>
+                            <span>Мар</span>
+                            <span>Апр</span>
+                            <span>Май</span>
+                            <span>Июн</span>
+                            <span>Июл</span>
+                            <span>Авг</span>
+                        </div>
+                    </div>
+                    <div class="gantt-body">
+                        <div class="gantt-row">
+                            <div class="gantt-label">Бэкенд API</div>
+                            <div class="gantt-bars">
+                                <div class="gantt-bar" style="left: 0%; width: 12.5%; background: linear-gradient(90deg, #6366F1, #818CF8);">
+                                    <span>API</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gantt-row">
+                            <div class="gantt-label">Бронирования</div>
+                            <div class="gantt-bars">
+                                <div class="gantt-bar" style="left: 12.5%; width: 12.5%; background: linear-gradient(90deg, #10B981, #34D399);">
+                                    <span>Букинг</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gantt-row">
+                            <div class="gantt-label">Платежи</div>
+                            <div class="gantt-bars">
+                                <div class="gantt-bar" style="left: 25%; width: 12.5%; background: linear-gradient(90deg, #F59E0B, #FBBF24);">
+                                    <span>Stripe</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gantt-row">
+                            <div class="gantt-label">Вендоры</div>
+                            <div class="gantt-bars">
+                                <div class="gantt-bar" style="left: 37.5%; width: 12.5%; background: linear-gradient(90deg, #EC4899, #F472B6);">
+                                    <span>Панель</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gantt-row">
+                            <div class="gantt-label">Фичи</div>
+                            <div class="gantt-bars">
+                                <div class="gantt-bar" style="left: 50%; width: 12.5%; background: linear-gradient(90deg, #8B5CF6, #A78BFA);">
+                                    <span>Поиск</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gantt-row">
+                            <div class="gantt-label">QA</div>
+                            <div class="gantt-bars">
+                                <div class="gantt-bar" style="left: 62.5%; width: 12.5%; background: linear-gradient(90deg, #14B8A6, #2DD4BF);">
+                                    <span>Тесты</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gantt-row">
+                            <div class="gantt-label">Beta</div>
+                            <div class="gantt-bars">
+                                <div class="gantt-bar" style="left: 75%; width: 12.5%; background: linear-gradient(90deg, #3B82F6, #60A5FA);">
+                                    <span>Beta</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gantt-row">
+                            <div class="gantt-label">Запуск</div>
+                            <div class="gantt-bars">
+                                <div class="gantt-bar gantt-bar-crit" style="left: 87.5%; width: 12.5%; background: linear-gradient(90deg, #EF4444, #F87171);">
+                                    <span>🚀 v1.0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout info" style="margin-top: 24px;">
+                    <span class="callout-icon">📊</span>
+                    <div class="callout-content">
+                        <div class="callout-title">Версии продукта</div>
+                        <div class="callout-text">
+                            <strong>MVP (Январь)</strong> → <strong>v0.4 (Февраль)</strong> → <strong>v0.6 (Март)</strong> → <strong>v0.8 (Апрель)</strong> → <strong>v0.9 (Май)</strong> → <strong>v1.0-RC (Июнь)</strong> → <strong>v1.0-BETA (Июль)</strong> → <strong>РЕЛИЗ (Август)</strong>
+                        </div>
+                    </div>
                 </div>
             </div>
 
