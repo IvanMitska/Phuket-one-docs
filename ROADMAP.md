@@ -2,7 +2,7 @@
 ## PhuketHub — План разработки на 6 месяцев
 
 **Период:** Январь 2026 — Июнь 2026
-**Команда:** 2-3 Full-stack разработчика
+**Команда:** 8 программистов (Frontend, Backend, DevOps, 2 Full-stack)
 **Last Updated:** December 2025
 
 ---

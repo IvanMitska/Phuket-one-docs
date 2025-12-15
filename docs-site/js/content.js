@@ -8827,7 +8827,7 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
             <div class="section">
                 <h2 class="section-title">Обзор</h2>
                 <p><strong>Период:</strong> Разработка: Январь — Май 2026 • Тестирование: Июнь — Август 2026<br>
-                <strong>Команда:</strong> 2-3 Full-stack разработчика</p>
+                <strong>Команда:</strong> 8 программистов (Frontend, Backend, DevOps, 2 Full-stack)</p>
 
                 <div class="gantt-timeline">
                     <div class="gantt-header">
@@ -8877,17 +8877,9 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                             </div>
                         </div>
                         <div class="gantt-row">
-                            <div class="gantt-label">Фичи</div>
-                            <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 50%; width: 12.5%; background: linear-gradient(90deg, #8B5CF6, #A78BFA);">
-                                    <span>Поиск</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gantt-row">
                             <div class="gantt-label">QA</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 62.5%; width: 12.5%; background: linear-gradient(90deg, #14B8A6, #2DD4BF);">
+                                <div class="gantt-bar" style="left: 50%; width: 12.5%; background: linear-gradient(90deg, #14B8A6, #2DD4BF);">
                                     <span>Тесты</span>
                                 </div>
                             </div>
@@ -8895,7 +8887,7 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                         <div class="gantt-row">
                             <div class="gantt-label">Beta</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 75%; width: 12.5%; background: linear-gradient(90deg, #3B82F6, #60A5FA);">
+                                <div class="gantt-bar" style="left: 62.5%; width: 12.5%; background: linear-gradient(90deg, #3B82F6, #60A5FA);">
                                     <span>Beta</span>
                                 </div>
                             </div>
@@ -8903,7 +8895,7 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                         <div class="gantt-row">
                             <div class="gantt-label">Запуск</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar gantt-bar-crit" style="left: 87.5%; width: 12.5%; background: linear-gradient(90deg, #EF4444, #F87171);">
+                                <div class="gantt-bar gantt-bar-crit" style="left: 75%; width: 12.5%; background: linear-gradient(90deg, #EF4444, #F87171);">
                                     <span>🚀 v1.0</span>
                                 </div>
                             </div>
