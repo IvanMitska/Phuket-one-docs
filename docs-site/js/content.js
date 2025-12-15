@@ -16,7 +16,7 @@ const CONTENT = {
         content: `
             <div class="section">
                 <h2 class="section-title">Roadmap</h2>
-                <p class="roadmap-subtitle">8 месяцев разработки • Январь — Август 2026</p>
+                <p class="roadmap-subtitle">5 месяцев разработки (Янв — Май) + 3 месяца тестирования (Июн — Авг) 2026</p>
 
                 <div class="roadmap-modern">
                     <div class="roadmap-track">
@@ -8822,11 +8822,11 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
         icon: null,
         platform: null,
         breadcrumb: ['Документация', 'Roadmap'],
-        description: '8-месячный план разработки: январь - август 2026',
+        description: '5 месяцев разработки (Янв — Май) + 3 месяца тестирования (Июн — Авг) 2026',
         content: `
             <div class="section">
                 <h2 class="section-title">Обзор</h2>
-                <p><strong>Период:</strong> Январь 2026 — Август 2026<br>
+                <p><strong>Период:</strong> Разработка: Январь — Май 2026 • Тестирование: Июнь — Август 2026<br>
                 <strong>Команда:</strong> 2-3 Full-stack разработчика</p>
 
                 <div class="gantt-timeline">
