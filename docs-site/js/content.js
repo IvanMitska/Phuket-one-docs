@@ -43,18 +43,18 @@ const CONTENT = {
                         <div class="track-item">
                             <div class="track-node node-3"></div>
                             <div class="track-card">
-                                <div class="track-period">Май — Июн</div>
-                                <h4 class="track-title">ИИ + Платежи</h4>
-                                <p class="track-desc">AI-ассистент, туры, Stripe, пуши</p>
+                                <div class="track-period">Май</div>
+                                <h4 class="track-title">Бета-запуск</h4>
+                                <p class="track-desc">AI-ассистент, платежи, публичная бета</p>
                             </div>
                         </div>
 
                         <div class="track-item">
                             <div class="track-node node-4"></div>
                             <div class="track-card">
-                                <div class="track-period">Июл — Авг</div>
-                                <h4 class="track-title">Запуск</h4>
-                                <p class="track-desc">Лояльность, тесты, релиз в сторы</p>
+                                <div class="track-period">Август</div>
+                                <h4 class="track-title">Релиз</h4>
+                                <p class="track-desc">Финальный релиз в сторы</p>
                             </div>
                         </div>
                     </div>
@@ -8877,25 +8877,25 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                             </div>
                         </div>
                         <div class="gantt-row">
-                            <div class="gantt-label">QA</div>
-                            <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 50%; width: 12.5%; background: linear-gradient(90deg, #14B8A6, #2DD4BF);">
-                                    <span>Тесты</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gantt-row">
                             <div class="gantt-label">Beta</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 62.5%; width: 12.5%; background: linear-gradient(90deg, #3B82F6, #60A5FA);">
+                                <div class="gantt-bar" style="left: 50%; width: 12.5%; background: linear-gradient(90deg, #3B82F6, #60A5FA);">
                                     <span>Beta</span>
                                 </div>
                             </div>
                         </div>
                         <div class="gantt-row">
-                            <div class="gantt-label">Запуск</div>
+                            <div class="gantt-label">QA/Тесты</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar gantt-bar-crit" style="left: 75%; width: 12.5%; background: linear-gradient(90deg, #EF4444, #F87171);">
+                                <div class="gantt-bar" style="left: 62.5%; width: 25%; background: linear-gradient(90deg, #14B8A6, #2DD4BF);">
+                                    <span>Тестирование</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gantt-row">
+                            <div class="gantt-label">Релиз</div>
+                            <div class="gantt-bars">
+                                <div class="gantt-bar gantt-bar-crit" style="left: 87.5%; width: 12.5%; background: linear-gradient(90deg, #EF4444, #F87171);">
                                     <span>🚀 v1.0</span>
                                 </div>
                             </div>
@@ -8908,7 +8908,7 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                     <div class="callout-content">
                         <div class="callout-title">Версии продукта</div>
                         <div class="callout-text">
-                            <strong>MVP (Январь)</strong> → <strong>v0.4 (Февраль)</strong> → <strong>v0.6 (Март)</strong> → <strong>v0.8 (Апрель)</strong> → <strong>v0.9 (Май)</strong> → <strong>v1.0-RC (Июнь)</strong> → <strong>v1.0-BETA (Июль)</strong> → <strong>РЕЛИЗ (Август)</strong>
+                            <strong>MVP (Январь)</strong> → <strong>v0.4 (Февраль)</strong> → <strong>v0.6 (Март)</strong> → <strong>v0.8 (Апрель)</strong> → <strong>v1.0-BETA (Май)</strong> → <strong>v1.0-RC (Июнь)</strong> → <strong>v1.0-RC2 (Июль)</strong> → <strong>РЕЛИЗ (Август)</strong>
                         </div>
                     </div>
                 </div>
@@ -8984,14 +8984,14 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                             <tr>
                                 <td>Спринт 10</td>
                                 <td>12.05 — 25.05</td>
-                                <td>Продвинутое</td>
-                                <td>Карты и локализация</td>
+                                <td>Beta</td>
+                                <td>Бета-запуск</td>
                             </tr>
                             <tr>
                                 <td>Спринт 11</td>
                                 <td>26.05 — 08.06</td>
-                                <td>Полировка</td>
-                                <td>Код-ревью и рефакторинг</td>
+                                <td>Тестирование</td>
+                                <td>Сбор фидбека и исправления</td>
                             </tr>
                             <tr>
                                 <td>Спринт 12</td>
@@ -9008,20 +9008,20 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                             <tr>
                                 <td>Спринт 14</td>
                                 <td>07.07 — 20.07</td>
-                                <td>Beta</td>
-                                <td>Закрытая Beta</td>
+                                <td>Полировка</td>
+                                <td>Улучшения по фидбеку</td>
                             </tr>
                             <tr>
                                 <td>Спринт 15</td>
                                 <td>21.07 — 03.08</td>
-                                <td>Beta</td>
-                                <td>Открытая Beta и багфиксы</td>
+                                <td>Полировка</td>
+                                <td>Финальная подготовка</td>
                             </tr>
                             <tr>
                                 <td>Спринт 16</td>
                                 <td>04.08 — 17.08</td>
                                 <td>Запуск</td>
-                                <td>Деплой и релиз</td>
+                                <td>Финальный релиз</td>
                             </tr>
                         </tbody>
                     </table>
@@ -9189,85 +9189,60 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
 
             <div class="section">
                 <h2 class="section-title">Месяц 5: Май 2026</h2>
-                <h3 class="section-subtitle">Продвинутые функции</h3>
-                <p><strong>Цель:</strong> Улучшенный поиск, карты, локализация</p>
+                <h3 class="section-subtitle">Финальные функции и Бета-запуск</h3>
+                <p><strong>Цель:</strong> Улучшенный поиск и публичная бета</p>
 
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Спринт 9 (Поиск)</th>
-                                <th>Спринт 10 (Карты и i18n)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>API глобального поиска</td>
-                                <td>Кластеризация Mapbox</td>
-                            </tr>
-                            <tr>
-                                <td>Полнотекстовый поиск (PostgreSQL)</td>
-                                <td>Всплывающие окна на карте</td>
-                            </tr>
-                            <tr>
-                                <td>Глобальный поиск в шапке</td>
-                                <td>Маршруты до объекта</td>
-                            </tr>
-                            <tr>
-                                <td>UI расширенных фильтров</td>
-                                <td>Настройка i18n (next-intl)</td>
-                            </tr>
-                            <tr>
-                                <td>Фильтр по границам карты</td>
-                                <td>Русский перевод</td>
-                            </tr>
-                            <tr>
-                                <td>Недавно просмотренные</td>
-                                <td>Тайский перевод</td>
-                            </tr>
-                            <tr>
-                                <td>Подсказки поиска</td>
-                                <td>Выбор валюты</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="callout info">
+                    <span class="callout-icon">🔍</span>
+                    <div class="callout-content">
+                        <div class="callout-title">Спринт 9 (Поиск и фильтры)</div>
+                        <div class="callout-text">API глобального поиска, расширенные фильтры, подсказки поиска</div>
+                    </div>
                 </div>
 
-                <p><strong>Результат:</strong> Полный функционал v1.0</p>
+                <div class="callout success">
+                    <span class="callout-icon">🚀</span>
+                    <div class="callout-content">
+                        <div class="callout-title">Спринт 10 (Бета-запуск)</div>
+                        <div class="callout-text">Публичная бета, первые пользователи, сбор обратной связи</div>
+                    </div>
+                </div>
+
+                <p><strong>Результат:</strong> v1.0-BETA</p>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Месяц 6: Июнь 2026</h2>
-                <h3 class="section-subtitle">Полировка и QA</h3>
-                <p><strong>Цель:</strong> Качество кода и покрытие тестами</p>
+                <h3 class="section-subtitle">Тестирование и QA</h3>
+                <p><strong>Цель:</strong> Исправления по фидбеку беты и QA</p>
 
                 <div class="table-wrapper">
                     <table>
                         <thead>
                             <tr>
-                                <th>Спринт 11 (Ревью кода)</th>
+                                <th>Спринт 11 (Фидбек)</th>
                                 <th>Спринт 12 (QA)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Ревью кода всех модулей</td>
+                                <td>Анализ обратной связи от беты</td>
                                 <td>E2E тесты (Playwright)</td>
                             </tr>
                             <tr>
-                                <td>Рефакторинг и очистка</td>
+                                <td>Исправление критических багов</td>
                                 <td>Аудит производительности (Lighthouse)</td>
                             </tr>
                             <tr>
-                                <td>Обновление документации</td>
+                                <td>Улучшения UX по фидбеку</td>
                                 <td>Оптимизация производительности</td>
                             </tr>
                             <tr>
-                                <td>Устранение техдолга</td>
+                                <td>Обновление документации</td>
                                 <td>Кроссбраузерное тестирование</td>
                             </tr>
                             <tr>
-                                <td>Проверка консистентности API</td>
+                                <td>Устранение техдолга</td>
                                 <td>Исправления мобильной адаптивности</td>
                             </tr>
                         </tbody>
@@ -9279,8 +9254,8 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
 
             <div class="section">
                 <h2 class="section-title">Месяц 7: Июль 2026</h2>
-                <h3 class="section-subtitle">Тестирование и Бета</h3>
-                <p><strong>Цель:</strong> Проверка безопасности и запуск беты</p>
+                <h3 class="section-subtitle">Безопасность и Полировка</h3>
+                <p><strong>Цель:</strong> Аудит безопасности и финальные улучшения</p>
 
                 <div class="callout warning">
                     <span class="callout-icon">🔒</span>
@@ -9291,10 +9266,10 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                 </div>
 
                 <div class="callout info">
-                    <span class="callout-icon">🧪</span>
+                    <span class="callout-icon">✨</span>
                     <div class="callout-content">
-                        <div class="callout-title">Спринт 14 (Закрытая бета)</div>
-                        <div class="callout-text">Бета по приглашениям (100-500 пользователей), Сбор обратной связи, Исправление критических багов</div>
+                        <div class="callout-title">Спринт 14 (Полировка)</div>
+                        <div class="callout-text">Улучшения по фидбеку беты, финальные исправления, оптимизация UX</div>
                     </div>
                 </div>
 
@@ -9327,26 +9302,26 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                     </table>
                 </div>
 
-                <p><strong>Результат:</strong> v1.0-BETA</p>
+                <p><strong>Результат:</strong> v1.0-RC2 (финальный релиз-кандидат)</p>
             </div>
 
             <div class="section">
                 <h2 class="section-title">Месяц 8: Август 2026</h2>
-                <h3 class="section-subtitle">Запуск и Релиз</h3>
-                <p><strong>Цель:</strong> Публичный запуск и мониторинг</p>
+                <h3 class="section-subtitle">Финальный Релиз</h3>
+                <p><strong>Цель:</strong> Финальная подготовка и публичный релиз</p>
 
                 <div class="callout info">
-                    <span class="callout-icon">📢</span>
+                    <span class="callout-icon">📋</span>
                     <div class="callout-content">
-                        <div class="callout-title">Спринт 15 (Открытая бета)</div>
-                        <div class="callout-text">Публичная бета, Исправления по фидбеку, Финальная полировка, Подготовка маркетинга</div>
+                        <div class="callout-title">Спринт 15 (Финальная подготовка)</div>
+                        <div class="callout-text">Последние исправления, подготовка маркетинга, финализация документации</div>
                     </div>
                 </div>
 
                 <div class="callout success">
                     <span class="callout-icon">🚀</span>
                     <div class="callout-content">
-                        <div class="callout-title">Спринт 16 (Продакшн запуск)</div>
+                        <div class="callout-title">Спринт 16 (Финальный релиз)</div>
                         <div class="callout-text">Деплой в продакшн, Stripe Live режим, Мониторинг 24/7, ПУБЛИЧНЫЙ РЕЛИЗ!</div>
                     </div>
                 </div>
