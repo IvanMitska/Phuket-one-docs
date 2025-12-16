@@ -44,8 +44,8 @@ const CONTENT = {
                             <div class="track-node node-3"></div>
                             <div class="track-card">
                                 <div class="track-period">Май</div>
-                                <h4 class="track-title">Бета-запуск</h4>
-                                <p class="track-desc">AI-ассистент, платежи, публичная бета</p>
+                                <h4 class="track-title">Релиз 1</h4>
+                                <p class="track-desc">Тестовый релиз, публичная бета</p>
                             </div>
                         </div>
 
@@ -53,7 +53,7 @@ const CONTENT = {
                             <div class="track-node node-4"></div>
                             <div class="track-card">
                                 <div class="track-period">Август</div>
-                                <h4 class="track-title">Релиз</h4>
+                                <h4 class="track-title">Релиз 2</h4>
                                 <p class="track-desc">Финальный релиз в сторы</p>
                             </div>
                         </div>
