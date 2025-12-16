@@ -16,7 +16,7 @@ const CONTENT = {
         content: `
             <div class="section">
                 <h2 class="section-title">Roadmap</h2>
-                <p class="roadmap-subtitle">5 месяцев разработки (Янв — Май) + 3 месяца тестирования (Июн — Авг) 2026</p>
+                <p class="roadmap-subtitle">5 месяцев разработки (Янв — Май) 2026</p>
 
                 <div class="roadmap-modern">
                     <div class="roadmap-track">
@@ -8813,11 +8813,11 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
         icon: null,
         platform: null,
         breadcrumb: ['Документация', 'Roadmap'],
-        description: '5 месяцев разработки (Янв — Май) + 3 месяца тестирования (Июн — Авг) 2026',
+        description: '5 месяцев разработки (Янв — Май) 2026',
         content: `
             <div class="section">
                 <h2 class="section-title">Обзор</h2>
-                <p><strong>Период:</strong> Разработка: Январь — Май 2026 • Тестирование: Июнь — Август 2026<br>
+                <p><strong>Период:</strong> Январь — Май 2026<br>
                 <strong>Команда:</strong> 8 программистов (Frontend, Backend, DevOps, 2 Full-stack)</p>
 
                 <div class="gantt-timeline">
@@ -8829,16 +8829,13 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                             <span>Мар</span>
                             <span>Апр</span>
                             <span>Май</span>
-                            <span>Июн</span>
-                            <span>Июл</span>
-                            <span>Авг</span>
                         </div>
                     </div>
                     <div class="gantt-body">
                         <div class="gantt-row">
                             <div class="gantt-label">Бэкенд API</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 0%; width: 12.5%; background: linear-gradient(90deg, #6366F1, #818CF8);">
+                                <div class="gantt-bar" style="left: 0%; width: 20%; background: linear-gradient(90deg, #6366F1, #818CF8);">
                                     <span>API</span>
                                 </div>
                             </div>
@@ -8846,7 +8843,7 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                         <div class="gantt-row">
                             <div class="gantt-label">Бронирования</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 12.5%; width: 12.5%; background: linear-gradient(90deg, #10B981, #34D399);">
+                                <div class="gantt-bar" style="left: 20%; width: 20%; background: linear-gradient(90deg, #10B981, #34D399);">
                                     <span>Букинг</span>
                                 </div>
                             </div>
@@ -8854,7 +8851,7 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                         <div class="gantt-row">
                             <div class="gantt-label">Платежи</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 25%; width: 12.5%; background: linear-gradient(90deg, #F59E0B, #FBBF24);">
+                                <div class="gantt-bar" style="left: 40%; width: 20%; background: linear-gradient(90deg, #F59E0B, #FBBF24);">
                                     <span>Stripe</span>
                                 </div>
                             </div>
@@ -8862,32 +8859,16 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                         <div class="gantt-row">
                             <div class="gantt-label">Вендоры</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 37.5%; width: 12.5%; background: linear-gradient(90deg, #EC4899, #F472B6);">
+                                <div class="gantt-bar" style="left: 60%; width: 20%; background: linear-gradient(90deg, #EC4899, #F472B6);">
                                     <span>Панель</span>
                                 </div>
                             </div>
                         </div>
                         <div class="gantt-row">
-                            <div class="gantt-label">Beta</div>
+                            <div class="gantt-label">Запуск</div>
                             <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 50%; width: 12.5%; background: linear-gradient(90deg, #3B82F6, #60A5FA);">
-                                    <span>Beta</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gantt-row">
-                            <div class="gantt-label">QA/Тесты</div>
-                            <div class="gantt-bars">
-                                <div class="gantt-bar" style="left: 62.5%; width: 25%; background: linear-gradient(90deg, #14B8A6, #2DD4BF);">
-                                    <span>Тестирование</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="gantt-row">
-                            <div class="gantt-label">Релиз</div>
-                            <div class="gantt-bars">
-                                <div class="gantt-bar gantt-bar-crit" style="left: 87.5%; width: 12.5%; background: linear-gradient(90deg, #EF4444, #F87171);">
-                                    <span>🚀 v1.0</span>
+                                <div class="gantt-bar gantt-bar-crit" style="left: 80%; width: 20%; background: linear-gradient(90deg, #EF4444, #F87171);">
+                                    <span>🚀 Запуск</span>
                                 </div>
                             </div>
                         </div>
@@ -8899,7 +8880,7 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                     <div class="callout-content">
                         <div class="callout-title">Версии продукта</div>
                         <div class="callout-text">
-                            <strong>MVP (Январь)</strong> → <strong>v0.4 (Февраль)</strong> → <strong>v0.6 (Март)</strong> → <strong>v0.8 (Апрель)</strong> → <strong>v1.0-BETA (Май)</strong> → <strong>v1.0-RC (Июнь)</strong> → <strong>v1.0-RC2 (Июль)</strong> → <strong>РЕЛИЗ (Август)</strong>
+                            <strong>MVP (Январь)</strong> → <strong>v0.4 (Февраль)</strong> → <strong>v0.6 (Март)</strong> → <strong>v0.8 (Апрель)</strong> → <strong>ЗАПУСК (Май)</strong>
                         </div>
                     </div>
                 </div>
@@ -8975,44 +8956,8 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                             <tr>
                                 <td>Спринт 10</td>
                                 <td>12.05 — 25.05</td>
-                                <td>Beta</td>
-                                <td>Бета-запуск</td>
-                            </tr>
-                            <tr>
-                                <td>Спринт 11</td>
-                                <td>26.05 — 08.06</td>
-                                <td>Тестирование</td>
-                                <td>Сбор фидбека и исправления</td>
-                            </tr>
-                            <tr>
-                                <td>Спринт 12</td>
-                                <td>09.06 — 22.06</td>
-                                <td>QA</td>
-                                <td>E2E тесты и производительность</td>
-                            </tr>
-                            <tr>
-                                <td>Спринт 13</td>
-                                <td>23.06 — 06.07</td>
-                                <td>Тестирование</td>
-                                <td>Аудит безопасности и нагрузка</td>
-                            </tr>
-                            <tr>
-                                <td>Спринт 14</td>
-                                <td>07.07 — 20.07</td>
-                                <td>Полировка</td>
-                                <td>Улучшения по фидбеку</td>
-                            </tr>
-                            <tr>
-                                <td>Спринт 15</td>
-                                <td>21.07 — 03.08</td>
-                                <td>Полировка</td>
-                                <td>Финальная подготовка</td>
-                            </tr>
-                            <tr>
-                                <td>Спринт 16</td>
-                                <td>04.08 — 17.08</td>
                                 <td>Запуск</td>
-                                <td>Финальный релиз</td>
+                                <td>Запуск и тестирование</td>
                             </tr>
                         </tbody>
                     </table>
@@ -9180,8 +9125,8 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
 
             <div class="section">
                 <h2 class="section-title">Месяц 5: Май 2026</h2>
-                <h3 class="section-subtitle">Финальные функции и Бета-запуск</h3>
-                <p><strong>Цель:</strong> Улучшенный поиск и публичная бета</p>
+                <h3 class="section-subtitle">Запуск и Тестирование</h3>
+                <p><strong>Цель:</strong> Финальные функции, запуск и тестирование</p>
 
                 <div class="callout info">
                     <span class="callout-icon">🔍</span>
@@ -9194,144 +9139,21 @@ CREATE INDEX idx_vehicles_partner ON vehicles(partner_id);
                 <div class="callout success">
                     <span class="callout-icon">🚀</span>
                     <div class="callout-content">
-                        <div class="callout-title">Спринт 10 (Бета-запуск)</div>
-                        <div class="callout-text">Публичная бета, первые пользователи, сбор обратной связи</div>
-                    </div>
-                </div>
-
-                <p><strong>Результат:</strong> v1.0-BETA</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Месяц 6: Июнь 2026</h2>
-                <h3 class="section-subtitle">Тестирование и QA</h3>
-                <p><strong>Цель:</strong> Исправления по фидбеку беты и QA</p>
-
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Спринт 11 (Фидбек)</th>
-                                <th>Спринт 12 (QA)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Анализ обратной связи от беты</td>
-                                <td>E2E тесты (Playwright)</td>
-                            </tr>
-                            <tr>
-                                <td>Исправление критических багов</td>
-                                <td>Аудит производительности (Lighthouse)</td>
-                            </tr>
-                            <tr>
-                                <td>Улучшения UX по фидбеку</td>
-                                <td>Оптимизация производительности</td>
-                            </tr>
-                            <tr>
-                                <td>Обновление документации</td>
-                                <td>Кроссбраузерное тестирование</td>
-                            </tr>
-                            <tr>
-                                <td>Устранение техдолга</td>
-                                <td>Исправления мобильной адаптивности</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p><strong>Результат:</strong> v1.0-RC (Релиз-кандидат)</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Месяц 7: Июль 2026</h2>
-                <h3 class="section-subtitle">Безопасность и Полировка</h3>
-                <p><strong>Цель:</strong> Аудит безопасности и финальные улучшения</p>
-
-                <div class="callout warning">
-                    <span class="callout-icon">🔒</span>
-                    <div class="callout-content">
-                        <div class="callout-title">Спринт 13 (Безопасность)</div>
-                        <div class="callout-text">Аудит безопасности, Пентест, Нагрузочное тестирование, Соответствие OWASP</div>
-                    </div>
-                </div>
-
-                <div class="callout info">
-                    <span class="callout-icon">✨</span>
-                    <div class="callout-content">
-                        <div class="callout-title">Спринт 14 (Полировка)</div>
-                        <div class="callout-text">Улучшения по фидбеку беты, финальные исправления, оптимизация UX</div>
-                    </div>
-                </div>
-
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Тестирование безопасности</th>
-                                <th>Нагрузочное тестирование</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Тестирование SQL-инъекций</td>
-                                <td>1000 одновременных пользователей</td>
-                            </tr>
-                            <tr>
-                                <td>Сканирование XSS-уязвимостей</td>
-                                <td>Время ответа API < 500мс</td>
-                            </tr>
-                            <tr>
-                                <td>Тесты обхода аутентификации</td>
-                                <td>Оптимизация запросов к БД</td>
-                            </tr>
-                            <tr>
-                                <td>Проверка rate limiting</td>
-                                <td>CDN cache hit ratio > 90%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p><strong>Результат:</strong> v1.0-RC2 (финальный релиз-кандидат)</p>
-            </div>
-
-            <div class="section">
-                <h2 class="section-title">Месяц 8: Август 2026</h2>
-                <h3 class="section-subtitle">Финальный Релиз</h3>
-                <p><strong>Цель:</strong> Финальная подготовка и публичный релиз</p>
-
-                <div class="callout info">
-                    <span class="callout-icon">📋</span>
-                    <div class="callout-content">
-                        <div class="callout-title">Спринт 15 (Финальная подготовка)</div>
-                        <div class="callout-text">Последние исправления, подготовка маркетинга, финализация документации</div>
-                    </div>
-                </div>
-
-                <div class="callout success">
-                    <span class="callout-icon">🚀</span>
-                    <div class="callout-content">
-                        <div class="callout-title">Спринт 16 (Финальный релиз)</div>
-                        <div class="callout-text">Деплой в продакшн, Stripe Live режим, Мониторинг 24/7, ПУБЛИЧНЫЙ РЕЛИЗ!</div>
+                        <div class="callout-title">Спринт 10 (Запуск)</div>
+                        <div class="callout-text">Запуск приложения, тестирование с реальными пользователями</div>
                     </div>
                 </div>
 
                 <h3 class="section-subtitle">Чеклист запуска</h3>
                 <ul>
-                    <li>Покрытие E2E > 80%</li>
-                    <li>Lighthouse score > 90</li>
-                    <li>Все критические/высокие баги исправлены</li>
-                    <li>Аудит безопасности пройден</li>
-                    <li>Нагрузочное тестирование пройдено (1000+ одновременно)</li>
+                    <li>Все основные функции реализованы</li>
+                    <li>Базовое тестирование пройдено</li>
                     <li>Продакшн окружение готово</li>
                     <li>Мониторинг настроен (Sentry, PostHog)</li>
-                    <li>Stripe Live режим активирован</li>
-                    <li>Фидбек беты обработан</li>
-                    <li>Документация финализирована</li>
+                    <li>Stripe интегрирован</li>
                 </ul>
 
-                <p><strong>Результат:</strong> v1.0 ПУБЛИЧНЫЙ РЕЛИЗ</p>
+                <p><strong>Результат:</strong> ЗАПУСК И ТЕСТИРОВАНИЕ</p>
             </div>
 
             <div class="section">
