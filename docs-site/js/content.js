@@ -45,16 +45,7 @@ const CONTENT = {
                             <div class="track-card">
                                 <div class="track-period">Май</div>
                                 <h4 class="track-title">Запуск</h4>
-                                <p class="track-desc">Бета, тестирование</p>
-                            </div>
-                        </div>
-
-                        <div class="track-item">
-                            <div class="track-node node-4"></div>
-                            <div class="track-card">
-                                <div class="track-period">Август</div>
-                                <h4 class="track-title">Релиз</h4>
-                                <p class="track-desc">Финальный релиз в сторы</p>
+                                <p class="track-desc">Запуск и тестирование</p>
                             </div>
                         </div>
                     </div>
